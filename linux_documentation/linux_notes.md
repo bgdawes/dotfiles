@@ -431,6 +431,13 @@ Verify URL (optional)
 Push the changes in your local repository to GitHub
 `git push origin master`  
 
+### Add files to repo and upload to GitHub  
+
+Copy file to project folder  
+Add file to staging `$ git add *`  
+Commit file added to staging `$ git commit -m "added file foo"`
+Upload repo changes to GitHub `$ git push origin master`
+
 Add these references:  
 https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/  
 
