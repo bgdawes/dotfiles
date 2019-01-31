@@ -446,7 +446,7 @@ Commit edits in staging `$ git commit -m "edited/updated foo"`
 Upload repo changes to GitHub `$ git push origin master`  
 
 Add these references:  
-https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/  
+<https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>  
 
 https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl  
 
