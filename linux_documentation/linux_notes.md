@@ -4,6 +4,7 @@ Contents
 
 1. [Arch Linux Install - PC Build](#archlinuxinstallpcbuild)
 2. [General recommendations](#generalrecommendations)
+3. [Git](#git)
 
 Appendix
 
@@ -435,7 +436,7 @@ Push the changes in your local repository to GitHub
 
 Copy file to project folder  
 Add file to staging `$ git add *`  
-Commit file added to staging `$ git commit -m "added file foo"`
+Commit file added to staging `$ git commit -m "added file foo"`  
 Upload repo changes to GitHub `$ git push origin master`  
 
 ### Edit repo files  
@@ -448,7 +449,7 @@ Upload repo changes to GitHub `$ git push origin master`
 Add these references:  
 <https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>  
 
-https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl  
+<https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl>  
 
 https://www.reddit.com/r/learnprogramming/comments/al0ebi/anyone_got_an_eli5_version_for_basic_git/  
 
