@@ -442,7 +442,7 @@ Upload repo changes to GitHub `$ git push origin master`
 ### Edit repo files  
 
 Edit files in project folder
-Add changes to staging `$ git add *`
+Add changes to staging `$ git add *`  
 Commit edits in staging `$ git commit -m "edited/updated foo"`  
 Upload repo changes to GitHub `$ git push origin master`  
 
