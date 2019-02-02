@@ -5,6 +5,7 @@ Contents
 1. [Arch Linux Install - PC Build](#archlinuxinstallpcbuild)
 2. [General recommendations](#generalrecommendations)
 3. [Git](#git)
+4. [pandoc](#pandoc)
 
 Appendix
 
@@ -453,7 +454,12 @@ Add these references:
 
 https://www.reddit.com/r/learnprogramming/comments/al0ebi/anyone_got_an_eli5_version_for_basic_git/  
 
+---
 
+## pandoc {#pandoc}  
+
+Convert markdown file to a latex formatted PDF  
+`pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
