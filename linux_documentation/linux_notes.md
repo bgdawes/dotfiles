@@ -447,6 +447,70 @@ Add changes to staging `$ git add *`
 Commit edits in staging `$ git commit -m "edited/updated foo"`  
 Upload repo changes to GitHub `$ git push origin master`  
 
+### Working with branches  
+
+I was messing around on github and accidently added a 'yaml' file to my repo. I didn't want to do this and deleted this on github. Then I went back and made changes on my local machine, added them to stage, committed them, and then tried to push them back to github. I couldn't because I had to merge the branches. This is what I did to fix it:  
+
+`$ git log --oneline --decorate --graph --all`
+
+```bash
+* abf6e59 (HEAD -> master) updated linux notes
+* 477ef66 updated linux notes
+| * 00d364d (origin/master) Delete _config.yml
+| * c8d93ab Set theme jekyll-theme-time-machine
+| * 2ab835a Set theme jekyll-theme-cayman
+|/  
+* 11f56af updated linux notes
+* 76b1f87 updated linux notes
+* af09232 updated linux notes
+* 842aad0 updated linux notes
+* db9ac65 updated linux notes
+* 6921927 added linux notes
+* 0ba02b6 repo created
+```
+
+`$ git pull origin master`
+`$ git log --oneline --decorate --graph --all`
+
+```bash
+*   2115836 (HEAD -> master) Merge branch 'master' of https://github.com/bgdawes/dotfiles
+|\  
+| * 00d364d (origin/master) Delete _config.yml
+| * c8d93ab Set theme jekyll-theme-time-machine
+| * 2ab835a Set theme jekyll-theme-cayman
+* | abf6e59 updated linux notes
+* | 477ef66 updated linux notes
+|/  
+* 11f56af updated linux notes
+* 76b1f87 updated linux notes
+* af09232 updated linux notes
+* 842aad0 updated linux notes
+* db9ac65 updated linux notes
+* 6921927 added linux notes
+* 0ba02b6 repo created
+```
+
+`$ git push origin master`
+`$ git log --oneline --decorate --graph --all`
+
+```bash
+*   2115836 (HEAD -> master, origin/master) Merge branch 'master' of https://github.com/bgdawes/dotfiles
+|\  
+| * 00d364d Delete _config.yml
+| * c8d93ab Set theme jekyll-theme-time-machine
+| * 2ab835a Set theme jekyll-theme-cayman
+* | abf6e59 updated linux notes
+* | 477ef66 updated linux notes
+|/  
+* 11f56af updated linux notes
+* 76b1f87 updated linux notes
+* af09232 updated linux notes
+* 842aad0 updated linux notes
+* db9ac65 updated linux notes
+* 6921927 added linux notes
+* 0ba02b6 repo created
+```
+
 Add these references:  
 <https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>  
 
