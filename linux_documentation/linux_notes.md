@@ -469,8 +469,8 @@ I was messing around on github and accidently added a 'yaml' file to my repo. I 
 * 0ba02b6 repo created
 ```
 
-`$ git pull origin master`
-`$ git log --oneline --decorate --graph --all`
+`$ git pull origin master`  
+`$ git log --oneline --decorate --graph --all`  
 
 ```bash
 *   2115836 (HEAD -> master) Merge branch 'master' of https://github.com/bgdawes/dotfiles
