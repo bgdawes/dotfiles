@@ -518,6 +518,8 @@ Add these references:
 
 <https://www.reddit.com/r/learnprogramming/comments/al0ebi/anyone_got_an_eli5_version_for_basic_git/>  
 
+Experiment 1: What happens when I update, stage, commit, and push a change remotely?
+
 ---
 
 ## pandoc {#pandoc}  
