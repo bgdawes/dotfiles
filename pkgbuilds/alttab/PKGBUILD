@@ -8,7 +8,7 @@ url="https://github.com/sagb/alttab"
 license=('GPL3')
 arch=('i686' 'x86_64')
 depends=('libx11' 'libxmu' 'libxft' 'libxrender' 'libxrandr' 'libpng' 'uthash')
-makedepends=('autoconf' 'automake' 'ruby-ronn')
+makedepends=('autoconf' 'automake' 'ruby-ronn' 'git')
 source=("git+https://github.com/sagb/alttab.git#branch=master")
 sha1sums=('SKIP')
 
@@ -21,7 +21,7 @@ build() {
 	pwd
 	ls -al
 	cd "$_name"
-    ./bootstrap.sh
+	./bootstrap.sh
 	./configure --prefix=/usr
 	make
 }
