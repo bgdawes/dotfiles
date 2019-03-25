@@ -13,8 +13,8 @@ alt + Return
 	rofi -show drun
 
 # rofi window switcher
-alt + Tab
-	rofi -show window
+#ctrl + Tab
+#	rofi -show window
 
 # whisker menu
 {Super_L,Super_R}
