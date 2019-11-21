@@ -2,7 +2,7 @@
 
 bspc monitor -d I II III IV V VI VII
 
-bspc config automatic_scheme longest_side
+bspc config automatic_scheme alternate
 bspc config initial_polarity second_child
 
 bspc config border_width 1
@@ -25,13 +25,13 @@ bspc config pointer_action3 resize_corner
 bspc config pointer_action1 move
 
 bspc rule -a Docky layer=above manage=on border=off focus=off locked=on
-bspc rule -a Firefox desktop=^1 follow=on
+bspc rule -a firefox desktop=^1 follow=on
 bspc rule -a tellico desktop=^2 follow=on
 bspc rule -a retroarch desktop=^3 follow=on
 bspc rule -a Gourmet follow=on state=tiled
 bspc rule -a Thunar follow=on
 bspc rule -a quassel desktop=^6 follow=on
-bspc rule -a Deluge desktop=^7 follow=on
+bspc rule -a Deluge-gtk desktop=^7 follow=on
 bspc rule -a Wrapper-2.0 state=floating
 bspc rule -a MPlayer state=floating
 bspc rule -a Xfce4-settings-manager follow=on state=tiled

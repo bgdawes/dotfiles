@@ -528,6 +528,12 @@ Experiment 1: What happens when I update, stage, commit, and push a change remot
 Convert markdown file to a latex formatted PDF  
 `pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
 
+## General Linux Commands
+
+### Decrypt PDF File with qpdf
+
+`qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
+
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  
