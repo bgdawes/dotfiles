@@ -530,6 +530,12 @@ Convert markdown file to a latex formatted PDF
 
 ## General Linux Commands
 
+Kill process
+`pkill foobar`
+
+Change owner (to allow permission to write files)
+`chown fartdawes foobar`
+
 ### Decrypt PDF File with qpdf
 
 `qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
