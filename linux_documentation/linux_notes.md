@@ -4,8 +4,10 @@ Contents
 
 1. [Arch Linux Install - PC Build](#archlinuxinstallpcbuild)
 2. [General recommendations](#generalrecommendations)
-3. [Git](#git)
-4. [pandoc](#pandoc)
+3. [General Linux Commands](#generallinuxcommands)
+4. [Git](#git)
+5. [aurutils](#aurutils)
+6. [pandoc](#pandoc)
 
 Appendix
 
@@ -279,6 +281,7 @@ UUID=2cff430b-b3e6-4718-85c3-673cecf0c9e4 none swap defaults 0 0
     `# nano /boot/loader/entries/arch.conf`  
 
 - Enter the following data for the file and then save the file:  
+
     ```bash
     title Arch Linux
     linux /vmlinuz-linux
@@ -401,7 +404,17 @@ To switch back to netctl, simply execute the enable / disable commands above aga
 
 ---
 
-## Git {#git}
+## General Linux Commands {#generallinuxcommands}
+
+Kill process
+`pkill foobar`
+
+Change owner (to allow permission to write files)
+`chown fartdawes foobar`
+
+---
+
+## Git[^6] {#git}
 
 ### Initial Setup
 
@@ -420,11 +433,11 @@ Create local git repo in that directory
 
 `$ git add *`
 
-### Commit files added to staging  
+### Commit files added to staging[^7]  
 
 `$ git commit -m "repo created"`  
 
-### Upload repo to GitHub  
+### Upload repo to GitHub[^8]  
 
 Create repo on GitHub, copy URL  
 `git remote add origin https://github.com/new-repo-url`  
@@ -511,15 +524,100 @@ I was messing around on github and accidently added a 'yaml' file to my repo. I 
 * 0ba02b6 repo created
 ```
 
-Add these references:  
-<https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/>  
+---
 
-<https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl>  
+## aurutils {#aurutils}
 
-<https://www.reddit.com/r/learnprogramming/comments/al0ebi/anyone_got_an_eli5_version_for_basic_git/>  
+aurutils is the AUR helper to use. As expected, I made stupid mistakes setting this up. I eventually got things working by doing this:
 
-Experiment 1: Stage and commit changes on home computer. Do not push to GitHub.
-Experiment 1: What happens when I update, stage, commit, and push a change remotely?
+### Install aurutils and create repository
+
+#### Install aurutils from the AUR
+
+Just read the wiki and make the package you idiot
+Install `devtools` and `vifm`
+
+#### Create the file /etc/pacman.d/aurpkgs
+
+Create the file
+`sudo touch /etc/pacman.d/aurpkgs`
+Write the file
+
+```#
+# /etc/pacman.d/aurpkgs
+#
+# See the pacman.conf(5) manpage for option and repository directives
+
+# # GENERAL OPTIONS
+#
+[options]
+CacheDir = /var/cache/pacman/pkg
+CacheDir = /var/cache/pacman/aurpkgs
+CleanMethod = KeepCurrent
+
+[aurpkgs]
+SigLevel = Optional TrustAll
+Server = file:///var/cache/pacman/aurpkgs
+```
+
+#### Update /etc/pacman.conf
+
+Add this line to the bottom of the file
+`Include = /etc/pacman.d/aurpkgs`
+
+#### Create the repository root and database
+
+`$ sudo install -d /var/cache/pacman/aurpkgs -o $USER`
+`$ repo-add /var/cache/pacman/aurpkgs/aurpkgs.db.tar`
+
+#### Synchronize pacman
+
+`sudo pacman -Syu`
+
+### Install AUR package
+
+#### Build foo and its dependencies in an nspawn container
+
+`aursync -c foo`
+TIP: to quit vifm, type `:q`
+
+#### Synchronize pacman with AUR package
+
+`sudo pacman -Syu`
+
+#### Install package
+
+`sudo pacman -S foo`
+
+### Update AUR packages
+
+`aursync -u`
+
+### Removing AUR packages
+
+#### First, uninstall the package
+
+`# pacman -Rsn foo`
+Confirm the package is no longer installed
+`# pacman -Sl aurpkgs`
+
+#### Once the package is no longer installed, remove the package from the repository
+
+`repo-remove /var/cache/pacman/aurpkgs/aurpkgs.db.tar foo`
+Refresh package databases
+`sudo pacman -Syu`
+AUR package removed!
+
+### Migrate existing AUR packages
+
+Find the package tar.xz file
+`~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
+Add the package file to the AUR local repository
+`repo-add /var/cache/pacman/aurpkgs/aurpkgs.db.tar ~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
+
+### Query explicitly installed AUR packages
+
+`# pacman -Sl aurpkgs`
 
 ---
 
@@ -528,13 +626,7 @@ Experiment 1: What happens when I update, stage, commit, and push a change remot
 Convert markdown file to a latex formatted PDF  
 `pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
 
-## General Linux Commands
-
-Kill process
-`pkill foobar`
-
-Change owner (to allow permission to write files)
-`chown fartdawes foobar`
+---
 
 ### Decrypt PDF File with qpdf
 
@@ -544,8 +636,14 @@ Change owner (to allow permission to write files)
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  
 
-[^3]: <https://www.howtogeek.com/196238/how-big-should-your-page-file-or-swap-partition-be/>  
+[^3]:<https://www.howtogeek.com/196238/how-big-should-your-page-file-or-swap-partition-be/>  
 
 [^4]:<https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s2-diskpartrecommend-ppc.html#id4394007>  
 
 [^5]:<https://bbs.archlinux.org/viewtopic.php?id=23793>  
+
+[^6]:<https://www.reddit.com/r/learnprogramming/comments/al0ebi/anyone_got_an_eli5_version_for_basic_git/>  
+
+[^7]:<https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl>  
+
+[^8]:<https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/> 
