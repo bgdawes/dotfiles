@@ -8,6 +8,7 @@ Contents
 4. [Git](#git)
 5. [aurutils](#aurutils)
 6. [pandoc](#pandoc)
+7. [vpn](#vpn)
 
 Appendix
 
@@ -625,6 +626,37 @@ Add the package file to the AUR local repository
 
 Convert markdown file to a latex formatted PDF  
 `pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
+
+---
+
+## vpn {#vpn}  
+
+Quick notes:
+
+Edit file: /var/run/NetworkManager/resolv.conf and change the address after nameserver to 1.1.1.1
+
+Start / enable service
+`# systemctl start systemd-resolved.service`
+
+Check to confirm you can still connect to the innernette
+
+Start / enable windscribe
+`# systemctl start windscribe`
+
+Login to windscribe
+`# windscribe login`
+
+Turn on firewall
+`# windscribe firewall on`
+
+Connect to windscribe
+`# windscribe connect`
+
+Disconnect and logout
+`# windscribe logout`
+
+Check status to ensure you've logged out
+`# windscribe status`
 
 ---
 
