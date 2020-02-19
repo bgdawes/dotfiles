@@ -9,6 +9,7 @@ Contents
 5. [aurutils](#aurutils)
 6. [pandoc](#pandoc)
 7. [vpn](#vpn)
+8. [Rsync & SSH](#rsyncssh)
 
 Appendix
 
@@ -631,11 +632,13 @@ Convert markdown file to a latex formatted PDF
 
 ## vpn {#vpn}  
 
-Quick notes:
+### Connect to Windscribe VPN
+
+This whole section needs to be updated. None of the ktorrent stuff applies. Also there is a lot to cut, summarize.
 
 Edit file: /var/run/NetworkManager/resolv.conf and change the address after nameserver to 1.1.1.1
 
-Start / enable service
+DONT DO THIS STEP ANYMORE Start / enable service
 `# systemctl start systemd-resolved.service`
 
 Check to confirm you can still connect to the innernette
@@ -658,6 +661,74 @@ Disconnect and logout
 Check status to ensure you've logged out
 `# windscribe status`
 
+### Don Lloyd with bittorrent using Windscribe VPN[^9]
+
+>We give users as much as we possibly can to secure their internet connection. When connected to the VPN in the desktop app, all your traffic is encrypted and your ISP is only seeing a garbled mess being transmitted to and from Windscribe. That's it, unless they have cracked the highest level of encryption somehow, they won't know what you are doing. Along with that there is also the Always-On Firewall feature which essentially forces you to use the VPN or else you won't have internet. All traffic has to go through the VPN tunnel in that case.
+>
+>Combining the two, your connection is as secure and anonymous as it can be. Using these two features should prevent your ISP from ever knowing about any torrent traffic.
+>
+>The correct steps to take are as follows:
+>
+>1. Enable the Always-On Firewall by going to Preferences > Connection and choosing Always On for the Firewall Mode. Press OK to save the changes. On Linux, the command to do this is windscribe firewall on
+>2. Connect to a VPN location, wait until you see the CONNECTED status in the app and only THEN open your torrent client. Don't open it until the VPN is connected as that can put you at risk of leaking your IP.
+>3. Add your torrent file to the download list and download the file.
+>4. Once downloaded, remove the torrent from the torrent client (right-click torrent > Delete/Remove) so that you are no longer acting as an upload node for that particular file. (If you want to keep uploading over the VPN, skip steps 4, 5 and 6)
+>5. Finally, completely shut down the torrent client, usually by going to File > Exit or something similar to that. You don't want it running to reduce the risk of any torrent traffic leaking through your own IP.
+>6. Once all that is complete, you can disconnect from the Windscribe VPN and disable the Always On Firewall in the Preferences again. On Linux, run the command windscribe firewall auto to return it to automatic mode.
+>
+>This is as bulletproof as it gets. If the steps are followed correctly, at no point is the torrent traffic ever exposed to your ISP since the Firewall only lets all the traffic go to Windscribe VPN server.
+
+#### bittorrent on KDE using Windscribe VPN and KTorrent
+
+1. Download torrent files
+
+2. Open KTorrent
+
+3. Edit file: /var/run/NetworkManager/resolv.conf and change the address after nameserver to 1.1.1.1
+
+4. DONT DO THIS ANYMORE - Start / enable service
+`# systemctl start systemd-resolved.service`
+
+5. Check to confirm you can still connect to the innernette
+
+6. Start / enable windscribe
+`# systemctl start windscribe`
+
+7. Login to windscribe
+`# windscribe login`
+
+8. Turn on firewall
+`# windscribe firewall on`
+
+9. Connect to windscribe
+`# windscribe connect`
+
+10. Open KTorrent
+
+11. Open Settings > Configure KTorrent
+
+12. Click on Proxy
+
+13. Enter Proxy IP and Port number from Windscribe
+
+14. Click Apply
+
+15. Click OK
+
+17. Open Torrents
+
+---
+
+## Rsync & SSH {#rsyncssh} 
+
+I have no idea how I set up the SSH connection unfortunately.
+
+To pull a file from Giant to Symphonic from Symphonic's terminal
+`rsync -P bgdawes@giant:/home/bgdawes/Documents/test.txt /home/bgdawes/Documents/temp`
+
+To pull a folder from Giant to Symphonic from Symphonic's terminal
+`rsync -P -r bgdawes@giant:/home/bgdawes/Documents/foldername /home/bgdawes/Documents/temp`
+
 ---
 
 ### Decrypt PDF File with qpdf
@@ -679,3 +750,5 @@ Check status to ensure you've logged out
 [^7]:<https://stackoverflow.com/questions/2419249/how-can-i-stage-and-commit-all-files-including-newly-added-files-using-a-singl>  
 
 [^8]:<https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/> 
+
+[^9]:<https://windscribe.com/support/article/21/using-windscribe-with-torrent-clients>
