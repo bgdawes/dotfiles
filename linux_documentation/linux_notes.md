@@ -735,6 +735,22 @@ To pull a folder from Giant to Symphonic from Symphonic's terminal
 
 `qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
 
+---
+
+### Kill an application and then run it again the background
+
+Use pkill to kill the process by name. You don't need to use sudo, sudo would kill ALL instances of picom running. pkill along will only kill the process that is being run by the current user.
+
+`pkill picom`
+
+Use -9 if you need some extra muscle and the program is really stuck.
+
+`pkill -9 picom`
+
+In Unix, a background process executes independently of the shell, leaving the terminal free for other work. To run a process in the background, include an & (an ampersand) at the end of the command you use to run the job. 
+
+`picom &`
+
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  
