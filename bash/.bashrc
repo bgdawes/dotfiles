@@ -16,6 +16,9 @@ alias usbeject='umount /dev/sdc1 && sudo eject /dev/sdc'
 
 export EDITOR='nano'
 export VISUAL='nano'
+export PAGER='most'
+
+complete -cf sudo man
 
 powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
