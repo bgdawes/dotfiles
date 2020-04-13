@@ -171,6 +171,7 @@ if (match) {
   var search_string = title.replace(/ +\(.*/, '').replace(/ +/g, '+');
 
   maybe_add_link('1337X', 'https://www.1337x.to/search/' + search_string +/1/, /<h2>Nothing found!<\/h2>|<h1>Not logged in!<\/h1>/);
+  maybe_add_link('YTS', 'https://yts.mx/browse-movies/' + search_string, /<h2>Nothing found!<\/h2>|<h1>Not logged in!<\/h1>/);
 
 /*  maybe_add_link('BHQ', 'http://www.bithq.org/browse.php?search=' + search_string, /<h2>Nothing found!<\/h2>|<h1>Not logged in!<\/h1>/); */
 /*  maybe_add_link('THC', */
