@@ -729,8 +729,8 @@ Remove a specific audio stream / track
 
 `ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
 
-map 0 selects all streams from the input.
-map -0:a:2 then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be 0:a:9.
+`map 0` selects all streams from the input.
+`map -0:a:2` then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be `0:a:9`.
 
 Remove specific audio streams / tracks
 Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
