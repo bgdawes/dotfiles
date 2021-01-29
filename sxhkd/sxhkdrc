@@ -5,8 +5,12 @@
 # workspace independent
 
 # terminal emulator
-alt + space
+alt + shift + space
 	termite
+
+# cool terminal emulator
+alt + space
+	cool-retro-term
 
 # rofi program launcher
 alt + Return
@@ -73,6 +77,10 @@ alt + shift + {Left,Right}
 # preselect the direction
 alt + ctrl + {Left,Down,Up,Right,space}
 	bspc node -p {west,south,north,east,cancel}
+
+# move floating window
+#m + {Left,Down,Up,Right}
+#    bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # set the node flag to hidden
 #alt + h

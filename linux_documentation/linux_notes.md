@@ -721,6 +721,22 @@ In Unix, a background process executes independently of the shell, leaving the t
 
 `picom &`
 
+---
+
+### Video editing - use ffmpeg to strip out audio tracks
+
+Remove a specific audio stream / track
+
+`ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
+
+map 0 selects all streams from the input.
+map -0:a:2 then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be 0:a:9.
+
+Remove specific audio streams / tracks
+Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
+
+`ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
+
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  

@@ -29,10 +29,9 @@ bspc rule -a firefox desktop=^1 follow=on
 bspc rule -a tellico desktop=^2 follow=on
 bspc rule -a code-oss desktop=^3 follow=on
 bspc rule -a libreoffice-startcenter desktop=^4 follow=on
-bspc rule -a libreoffice-calc desktop=^4 follow=on
-bspc rule -a libreoffice-writer desktop=^4 follow=on
-bspc rule -a libreoffice-impress desktop=^4 follow=on
+bspc rule -a Soffice desktop=^4 follow=on
 bspc rule -a retroarch desktop=^5 follow=on
+bspc rule -a 'Microsoft Teams - Preview' desktop=^5 follow=on
 bspc rule -a quassel desktop=^6 follow=on
 bspc rule -a Deluge-gtk desktop=^7 follow=on
 bspc rule -a Gourmet follow=on state=tiled
