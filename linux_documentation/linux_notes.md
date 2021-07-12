@@ -737,6 +737,33 @@ Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
 
 `ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
 
+### Video editing - use ffmpeg to burn subtitles
+
+You can burn text subtitles (hardsubs) with one of two filters: subtitles or ass
+
+#### subtitles filter
+
+Draw subtitles on top of input video using the libass library. This filter requires ffmpeg to be compiled with --enable-libass. See the ​subtitles video filter documentation for more details.
+
+If the subtitle is a separate file called subtitle.srt, you can use this command:
+
+`ffmpeg -i video.avi -vf subtitles=subtitle.srt out.avi`
+
+If the subtitle is embedded in the container video.mkv, you can do this:
+
+`ffmpeg -i video.mkv -vf subtitles=video.mkv out.avi`
+
+#### ass filter
+
+Same as the subtitles filter, except that it doesn’t require libavcodec and libavformat to work. This filter requires ffmpeg to be compiled with --enable-libass. On the other hand, it is limited to ​ASS (Advanced Substation Alpha) subtitles files. See the ​ass video filter documentation for more details.
+
+`ffmpeg -i video.avi -vf "ass=subtitle.ass" out.avi`
+
+If your subtitle is in SubRip, MicroDVD or any other supported text subtitles, you have to convert it to ASS before using this filter:
+
+`ffmpeg -i subtitle.srt subtitle.ass`
+
+
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  
