@@ -6,7 +6,7 @@
 
 # terminal emulator
 alt + space
-	Alacritty
+	alacritty
 
 # cool terminal emulator
 alt + shift + space
