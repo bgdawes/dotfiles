@@ -5,12 +5,12 @@
 # workspace independent
 
 # terminal emulator
-alt + shift + space
-	cool-retro-term
-
-# cool terminal emulator
 alt + space
 	Alacritty
+
+# cool terminal emulator
+alt + shift + space
+	cool-retro-term
 
 # rofi program launcher
 alt + Return
