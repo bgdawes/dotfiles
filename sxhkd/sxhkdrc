@@ -6,11 +6,11 @@
 
 # terminal emulator
 alt + shift + space
-	termite
+	cool-retro-term
 
 # cool terminal emulator
 alt + space
-	cool-retro-term
+	Alacritty
 
 # rofi program launcher
 alt + Return
