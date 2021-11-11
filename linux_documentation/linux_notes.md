@@ -448,6 +448,12 @@ Verify URL (optional)
 Push the changes in your local repository to GitHub
 `git push origin master`  
 
+Dont get confused by 'origin' - when Personal Access Tokens were rolled out, I tried to add a token in the terminal with this command:
+
+`git remote set-url origin https://bgdawes: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@github.com/bgdawes/dotfiles.git`
+
+I got an error - but then I ran `$ git remote -v` and noticed that I needed to replace 'origin' with 'github-dotfiles'. At some point I must have changed this.
+
 ### Add files to repo and upload to GitHub  
 
 Copy file to project folder  
