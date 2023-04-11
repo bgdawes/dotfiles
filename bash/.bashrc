@@ -9,7 +9,8 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 PATH=$PATH:~/bin:~/.scripts
-alias ripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/storage/dvdworkspace/dvd-copiez -M'
+alias storageripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/storage/dvdworkspace/dvd-copiez -M'
+alias mainripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/Videos/dvd-copiez -M'
 alias shutdown='shutdown -h now'
 alias playdvd='mplayer dvdnav:// -mouse-movements -dvd-device'
 alias usbeject='umount /dev/sdc1 && sudo eject /dev/sdc'
