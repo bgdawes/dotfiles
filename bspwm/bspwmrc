@@ -31,14 +31,11 @@ bspc rule -a code-oss desktop=^3 follow=on
 bspc rule -a libreoffice-startcenter desktop=^4 follow=on
 bspc rule -a Soffice desktop=^4 follow=on
 bspc rule -a retroarch desktop=^5 follow=on
-bspc rule -a 'Microsoft Teams - Preview' desktop=^5 follow=on
 bspc rule -a quassel desktop=^6 follow=on
 bspc rule -a Deluge-gtk desktop=^7 follow=on
-bspc rule -a Gourmet follow=on state=tiled
 bspc rule -a Thunar follow=on
 bspc rule -a Wrapper-2.0 state=floating
 bspc rule -a MPlayer state=floating
 bspc rule -a Xfce4-settings-manager follow=on state=tiled
 bspc rule -a Xfce4-notes state=floating rectangle=500x500+1250+100
 bspc rule -a Galculator follow=on state=floating
-bspc rule -a Orage state=floating
