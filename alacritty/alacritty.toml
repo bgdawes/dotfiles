@@ -1,0 +1,40 @@
+[colors.bright]
+black = "#4C566A"
+blue = "#81A1C1"
+cyan = "#8FBCBB"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#ECEFF4"
+yellow = "#EBCB8B"
+
+[colors.normal]
+black = "#3B4252"
+blue = "#81A1C1"
+cyan = "#88C0D0"
+green = "#A3BE8C"
+magenta = "#B48EAD"
+red = "#BF616A"
+white = "#E5E9F0"
+yellow = "#EBCB8B"
+
+[colors.primary]
+background = "#2E3440"
+foreground = "#D8DEE9"
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[scrolling]
+history = 10000
+
+[window]
+opacity = 0.9
+
+[window.padding]
+x = 10
+y = 10
