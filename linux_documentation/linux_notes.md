@@ -10,6 +10,8 @@ Contents
 6. [pandoc](#pandoc)
 7. [vpn](#vpn)
 8. [Rsync & SSH](#rsyncssh)
+9. [Synergy](#synergy)
+10. [Stow](#stow)
 
 Appendix
 
@@ -414,6 +416,31 @@ Kill process
 Change owner (to allow permission to write files)
 `chown fartdawes foobar`
 
+Decrypt PDF File with qpdf
+`qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
+
+Kill an application and then run it again the background
+Use pkill to kill the process by name. You don't need to use sudo, sudo would kill ALL instances of picom running. pkill along will only kill the process that is being run by the current user.
+`pkill picom`
+
+Use -9 if you need some extra muscle and the program is really stuck.
+`pkill -9 picom`
+
+In Unix, a background process executes independently of the shell, leaving the terminal free for other work. To run a process in the background, include an & (an ampersand) at the end of the command you use to run the job. 
+`picom &`
+
+Video editing - use ffmpeg to strip out audio tracks: remove a specific audio stream / track
+
+`ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
+
+`map 0` selects all streams from the input.
+`map -0:a:2` then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be `0:a:9`.
+
+Remove specific audio streams / tracks
+Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
+
+`ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
+
 ---
 
 ## Git[^6] {#git}
@@ -707,42 +734,138 @@ To pull a folder from Giant to Symphonic from Symphonic's terminal
 
 ---
 
-### Decrypt PDF File with qpdf
+## Synergy {#synergy} 
 
-`qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
+Synergy is a great program that allows a single keyboard and mouse that can be used across multiple computers on the same network. I had a hard time setting it up though. There are several things working against it - it's paid for software so the linux version is outdated (but still in the official repos as of 03-21-2024) so I'm running synergy 1.11.1-1 on my kde-arch linux laptop as a client, synergy 1.11.1-1 on my main arch box as the server, and synergy 3.0.79 RC3 [windows version - Synergy 3 RC3] as another client.
+
+I didn't document anything when I first set up Synergy and that was dumb. When I installed Plasma 6 on my KDE laptop, synergy no longer worked. Then when I tried to fix it, I broke the connection to my windows laptop. I tried to start from scratch by removing synergy from my main arch box and then the system hung on boot and wouldn't even start. I had to hit ctl+alt+F2, then I was able reinstall synergy and it worked.
+
+The reason it hung on boot is that I had synergy autostarting using lightdm. When lightdm was initializing, there was a command at the end that was trying to start an application that no longer existed. Lightdm has depreciated autostarting applications so this wasn't a good way to do it anyway. Then I tried finding out how synergy was autostarting on my kde laptop. I found this by running the command `grep -rl 'synergyc symphonic' /` on every folder in `/` individually. I finally got lucky with `grep -rl 'synergyc symphonic' /usr`. Windows starts synergy by default with the synergy 3 release so no research was needed.
+
+Once I had everything figured out, I stopped synergy from autostarting on my KDE laptop and my main arch box. Then I uninstalled synergy on all three systems. I followed the steps below to get everything working again. Note: as of 03/25/2024, the arch wiki for synergy is pretty helpful - it redirects now to 'input leap' though which is a fork of the original free version of synergy and it looks like work has stopped on input leap.
+
+### Set up hosts on each computer
+
+Update the hosts file on each computer to allow them to talk with each other. Host file locations and configuration listed by computer below. Once host files are configured on each computer, `ping` each computer you have in the host files (i.e. ping giant from symphonic, ping symphonic from giant, etc.). Hit ctrl+c to stop pinging on the command line. I have static IP's assigned for all three computers and set them up that way. I then experimented and attached an ethernet cable from symphonic to giant. I get a noticeably better performance having the ethernet IP in the hosts files for giant and symphonic. I looked up the ethernet IP by running `ip addr` the entry starting with 'e' lists the ethernet ip and the entry starting with 'w' lists the wifi ip.
+
+symphonic `/etc/hosts`
+```#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+10.20.0.76 	giant.localdomain 	giant
+192.168.86.38	US-PC2JY6YZ.localdomain	US-PC2JY6YZ
+192.168.86.248	US-5CG828379W.localdomain	US-5CG828379W
+104.25.93.117   retrowith.in
+51.15.174.218   irc.retrowith.in
+
+# End of file
+```
+
+giant `/etc/hosts`
+```#
+# /etc/hosts: static lookup table for host names
+#
+
+#<ip-address>	<hostname.domain.org>	<hostname>
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+10.20.0.75 symphonic.localdomain symphonic
+
+# End of file
+```
+
+
+work laptop `C:\WINDOWS\system32\drivers\etc\hosts`
+
+```# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+#
+# For example:
+#
+#      102.54.94.97     rhino.acme.com          # source server
+#       38.25.63.10     x.acme.com              # x client host
+
+# localhost name resolution is handled within DNS itself.
+#	127.0.0.1       localhost
+#	::1             localhost
+
+192.168.86.36	symphonic
+```
+
+### Configure Server
+
+Server configuration file on github repo.
+
+Set up synergy to run as a service with systemd.
+
+The version of synergy available in the official repo installs with a systemd service. Synergy can run automatically at boot with this systemd service. Run this server as a user by following the steps below:
+
+`$ systemctl --user enable synergys.service`
+`$ systemctl --user start synergys.service`
+
+### Configure Client (giant)
+
+
+I originally had this set up by auto starting synergys using lightdm on my main arch box and auto starting synergyc using sddm on my kde-arch linux laptop. This isn't a good way to do it. The best way for linux machines is to use systemd. After I upgraded my kde-arch linux laptop to the newest version of plasma that uses Wayland as a defult, everything went to pot so I had to basically redo all of the setup. I removed all packages but got hung up because of synergy autostart configurations I had in place for lightdm and sddm.
+
+I forgot how I had these auto started by display managers so I had no idea about how to turn them off. When I uninstalled synergy on my main arch box, the system hung on boot because the display manager (lightdm) was trying to run a process that no longer existed.
+
+I found this out by logging into the system, and being unable to boot. I then hit ctrl+alt+F2 which allowed me to boot into the system. Then I reinstalled synergy and then realized that my display manager lightdm config file needed to be updated to remove the autostart. I found this out by observing that lightdm failed in the boot journal by pasting the journal output to gist.
+
+'journalctl - b | gist -p' 
+
+I got lucky by figuring out that synergy needed to be reinstalled and to prevent the hang on boot and then figuring out why it hung on boot because lightdm was trying to start a process that wasn't there.
+
+Then had to figure out what was autostarting synergy on my kde-arch linux laptop. 
+
+I had sddm autostart synergy here: /usr/share/sddm/scripts/Xsetup. I commented it out.
+
+So now I'm back to ground zero. I uninstalled synergy in both linux machines and uninstalled synergy on my windows work laptop. Host files on all three machines stayed the same and we all could ping each other (no need to capture notes on that - you should know how to do this).
+
+I reinstalled synergy on my main arch box and setup the config file
+
+I reinstalled synergy on my kde-arch linux laptop - NOTE WAYLAND DOESNT SUPPORT SYNERGY I only fixed this (which really was the root of all problems) by finding out that plasma automatically starts up using wayland. When I stopped SDDM from launching synergy, I changed it to stop autologging me in and then I found out that it's starting with wayland so I changed it to X11 and synergy was fixed. There's a button on the lower left corner of the SDDM greeter screen where you can chose between Wayland or X11.
+
+I created a new service to start synergy on my kde-arch linux box
+
+This was annoying. I wrote a service file as listed in the arch wiki, but I didn't know how to get this to work with systemd. My problem was that folder /home/bgdawes/.config/systemd was owned by root. I changed permissions using sudo chown -R bgdawes:users /home/bgdawes/.config/systemd
+
+Then I ran systemctl --user daemon-reload
+
+Then I ran systemctl --user start synergyc.service
+and systemctl --user enable synergyc.service
+
+I also enabled a user systemctl 'lag' $ loginctl enable-linger to get syngergy's services to start at boot
+
+websites that helped me with this
+https://bbs.archlinux.org/viewtopic.php?id=267361
+
+## Stow {#stow}
+
+Move new stow file to dotfiles folder
+`# mv /etc/synergy.conf /home/bgdawes/dotfiles/etc/`
+Change directory to new stow file
+`$ cd dotfiles`
+Stow folder with new stow file
+`$ stow etc`
+Create symlink to where the new stow file should go. Note: you may need to run this as sudo if the location is owned by root.
+`$# sudo stow -t /etc/ etc`
 
 ---
-
-### Kill an application and then run it again the background
-
-Use pkill to kill the process by name. You don't need to use sudo, sudo would kill ALL instances of picom running. pkill along will only kill the process that is being run by the current user.
-
-`pkill picom`
-
-Use -9 if you need some extra muscle and the program is really stuck.
-
-`pkill -9 picom`
-
-In Unix, a background process executes independently of the shell, leaving the terminal free for other work. To run a process in the background, include an & (an ampersand) at the end of the command you use to run the job. 
-
-`picom &`
-
----
-
-### Video editing - use ffmpeg to strip out audio tracks
-
-Remove a specific audio stream / track
-
-`ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
-
-`map 0` selects all streams from the input.
-`map -0:a:2` then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be `0:a:9`.
-
-Remove specific audio streams / tracks
-Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
-
-`ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
-
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
