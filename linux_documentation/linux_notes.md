@@ -559,6 +559,12 @@ I was messing around on github and accidently added a 'yaml' file to my repo. I 
 * 0ba02b6 repo created
 ```
 
+### Gist (pastebin alternative)
+
+Gist is a really great way to paste stuff (like system journals) to github directly from the command line. This was a huge help when I messed up synergy and my system hung on boot / wouldn't even start. You have to first install the `gist` package and then set it up on github, the process was really easy - you do it through the command line and it gives you some token to enter on github. Then you can save boot journals to gist for debugging in case you mess up your system like I did with synergy.
+
+`journalctl - b | gist -p`
+
 ---
 
 ## aurutils {#aurutils}
@@ -736,7 +742,7 @@ To pull a folder from Giant to Symphonic from Symphonic's terminal
 
 ## Synergy {#synergy} 
 
-Synergy is a great program that allows a single keyboard and mouse that can be used across multiple computers on the same network. I had a hard time setting it up though. There are several things working against it - it's paid for software so the linux version is outdated (but still in the official repos as of 03-21-2024) so I'm running synergy 1.11.1-1 on my kde-arch linux laptop as a client, synergy 1.11.1-1 on my main arch box as the server, and synergy 3.0.79 RC3 [windows version - Synergy 3 RC3] as another client.
+Synergy is a great program that allows a single keyboard and mouse that can be used across multiple computers on the same network. I had a hard time setting it up though. There are several things working against it - it's paid for software so the linux version is outdated (but still in the official repos as of 03-21-2024) so I'm running synergy 1.11.1-1 on my kde-arch linux laptop as a client, synergy 1.11.1-1 on my main arch box as the server, and synergy 3.0.79 RC3 [windows version - Synergy 3 RC3] as another client. Don't remove this package if it's ever removed from the official repos.
 
 I didn't document anything when I first set up Synergy and that was dumb. When I installed Plasma 6 on my KDE laptop, synergy no longer worked. Then when I tried to fix it, I broke the connection to my windows laptop. I tried to start from scratch by removing synergy from my main arch box and then the system hung on boot and wouldn't even start. I had to hit ctl+alt+F2, then I was able reinstall synergy and it worked.
 
@@ -819,51 +825,58 @@ The version of synergy available in the official repo installs with a systemd se
 
 ### Configure Client (giant)
 
+The new version of plasma uses wayland by default. Wayland doesn't support synergy. The computers connected but the mouse wouldn't display and the keyboard wouldn't work. I updated `sddm` settings through the GUI to autostart a bgdawes session and also switched the wayland default back to x11.
 
-I originally had this set up by auto starting synergys using lightdm on my main arch box and auto starting synergyc using sddm on my kde-arch linux laptop. This isn't a good way to do it. The best way for linux machines is to use systemd. After I upgraded my kde-arch linux laptop to the newest version of plasma that uses Wayland as a defult, everything went to pot so I had to basically redo all of the setup. I removed all packages but got hung up because of synergy autostart configurations I had in place for lightdm and sddm.
+I wanted `synergyc` to autostart as a systemd service instead of being started by `sddm`. I followed the arch wiki exactly and created a service for `synergyc`:
 
-I forgot how I had these auto started by display managers so I had no idea about how to turn them off. When I uninstalled synergy on my main arch box, the system hung on boot because the display manager (lightdm) was trying to run a process that no longer existed.
+`/home/bgdawes/.config/systemd/user/synergyc.service`
+```[Unit]
+Description=Synergy Client Daemon
+After=network.target
 
-I found this out by logging into the system, and being unable to boot. I then hit ctrl+alt+F2 which allowed me to boot into the system. Then I reinstalled synergy and then realized that my display manager lightdm config file needed to be updated to remove the autostart. I found this out by observing that lightdm failed in the boot journal by pasting the journal output to gist.
+[Service]
+ExecStart=/usr/bin/synergyc --no-daemon symphonic
+Restart=always
+RestartSec=3
 
-'journalctl - b | gist -p' 
+[Install]
+WantedBy=default.target
+```
+Then I ran the following commands:
+`# systemctl daemon-reload`
+`$ systemctl --user start synergyc.service`
+`$ systemctl --user enable synergyc.service`
 
-I got lucky by figuring out that synergy needed to be reinstalled and to prevent the hang on boot and then figuring out why it hung on boot because lightdm was trying to start a process that wasn't there.
+Everything worked great until I rebooted giant. Synergy didn't work but `$ ps aux | grep synergyc` listed that `synergyc` was up and running under user `bgdawes`.
 
-Then had to figure out what was autostarting synergy on my kde-arch linux laptop. 
+I messed around with trying to autostart synergyc using plasma tools but gave up and switched back to starting `synergyc` under root through `sddm`.
 
-I had sddm autostart synergy here: /usr/share/sddm/scripts/Xsetup. I commented it out.
+`/usr/share/sddm/scripts/Xsetup`
+```
+#!/bin/sh
+# Xsetup - run as root before the login dialog appears
 
-So now I'm back to ground zero. I uninstalled synergy in both linux machines and uninstalled synergy on my windows work laptop. Host files on all three machines stayed the same and we all could ping each other (no need to capture notes on that - you should know how to do this).
+synergyc symphonic
+```
 
-I reinstalled synergy on my main arch box and setup the config file
+### Configure Client (work laptop)
 
-I reinstalled synergy on my kde-arch linux laptop - NOTE WAYLAND DOESNT SUPPORT SYNERGY I only fixed this (which really was the root of all problems) by finding out that plasma automatically starts up using wayland. When I stopped SDDM from launching synergy, I changed it to stop autologging me in and then I found out that it's starting with wayland so I changed it to X11 and synergy was fixed. There's a button on the lower left corner of the SDDM greeter screen where you can chose between Wayland or X11.
-
-I created a new service to start synergy on my kde-arch linux box
-
-This was annoying. I wrote a service file as listed in the arch wiki, but I didn't know how to get this to work with systemd. My problem was that folder /home/bgdawes/.config/systemd was owned by root. I changed permissions using sudo chown -R bgdawes:users /home/bgdawes/.config/systemd
-
-Then I ran systemctl --user daemon-reload
-
-Then I ran systemctl --user start synergyc.service
-and systemctl --user enable synergyc.service
-
-I also enabled a user systemctl 'lag' $ loginctl enable-linger to get syngergy's services to start at boot
-
-websites that helped me with this
-https://bbs.archlinux.org/viewtopic.php?id=267361
+I originally installed synergy 1 but it got laggy / buggy, then I installed Synergy 3 (Synergy 3 RC3) and everything works well (knock on wood). I spent hours trying to add `symphonic` as a computer to get this to work but the connection would always fail. Finally I clicked (or slid the switch) on 'manual config'. That brought up a menu where I could add the host name and wifi ip of `symphonic`. After that, everything works perfectly.
 
 ## Stow {#stow}
 
 Move new stow file to dotfiles folder
 `# mv /etc/synergy.conf /home/bgdawes/dotfiles/etc/`
+
 Change directory to new stow file
 `$ cd dotfiles`
-Stow folder with new stow file
-`$ stow etc`
-Create symlink to where the new stow file should go. Note: you may need to run this as sudo if the location is owned by root.
-`$# sudo stow -t /etc/ etc`
+
+Create symlink to where the new stow file should go. Note: you may need to run this as sudo if the target location is owned by root.
+`# stow -t /etc/ etc`
+
+I'm still not quite sure how stow works but I've got it to work the way I want it to work. In the example above I had to use the -t command to get the symlink established. I think this might be because the file I wanted to stow is in /etc/? Regardless, next time you want to stow something, hopefully this will help.
+
+Reference that helped me to understand stow a little better: https://gist.github.com/andreibosco/cb8506780d0942a712fc
 
 ---
 
