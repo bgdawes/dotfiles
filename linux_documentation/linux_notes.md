@@ -30,6 +30,8 @@ Two different options were available with this release. Selected the option that
 
 ### Connect to the Innernette  
 
+#### This section is likely outdated (replaced with iwctl)
+
 - Type the following command below to view devices  
     `# ip link`  
 
@@ -411,27 +413,27 @@ To switch back to netctl, simply execute the enable / disable commands above aga
 ## General Linux Commands {#generallinuxcommands}
 
 Kill process
-`pkill foobar`
+`$ pkill foobar`
 
 Change owner (to allow permission to write files)
-`chown fartdawes foobar`
+`# chown -R bgdawes:users /storage`
 
 Decrypt PDF File with qpdf
-`qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
+`$ qpdf --decrypt inputpdffilename.pdf outputpdffilename.pdf`
 
 Kill an application and then run it again the background
 Use pkill to kill the process by name. You don't need to use sudo, sudo would kill ALL instances of picom running. pkill along will only kill the process that is being run by the current user.
-`pkill picom`
+`$ pkill picom`
 
 Use -9 if you need some extra muscle and the program is really stuck.
-`pkill -9 picom`
+`$ pkill -9 picom`
 
 In Unix, a background process executes independently of the shell, leaving the terminal free for other work. To run a process in the background, include an & (an ampersand) at the end of the command you use to run the job. 
-`picom &`
+`$ picom &`
 
 Video editing - use ffmpeg to strip out audio tracks: remove a specific audio stream / track
 
-`ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
+`$ ffmpeg -i input -map 0 -map -0:a:2 -c copy output`
 
 `map 0` selects all streams from the input.
 `map -0:a:2` then deselects audio stream 3. The stream index starts counting from 0, so audio stream 10 would be `0:a:9`.
@@ -439,7 +441,7 @@ Video editing - use ffmpeg to strip out audio tracks: remove a specific audio st
 Remove specific audio streams / tracks
 Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
 
-`ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
+`$ ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
 
 ---
 
@@ -469,15 +471,15 @@ Create local git repo in that directory
 ### Upload repo to GitHub[^8]  
 
 Create repo on GitHub, copy URL  
-`git remote add origin https://github.com/new-repo-url`  
+`$ git remote add origin https://github.com/new-repo-url`  
 Verify URL (optional)  
 `$ git remote -v`  
 Push the changes in your local repository to GitHub
-`git push origin master`  
+`$ git push origin master`  
 
 Dont get confused by 'origin' - when Personal Access Tokens were rolled out, I tried to add a token in the terminal with this command:
 
-`git remote set-url origin https://bgdawes:[don't actually paste your personal access token here you dum-dum]@github.com/bgdawes/dotfiles.git`
+`$ git remote set-url origin https://bgdawes:[don't actually paste your personal access token here you dum-dum]@github.com/bgdawes/dotfiles.git`
 
 I got an error - but then I ran `$ git remote -v` and noticed that I needed to replace 'origin' with 'github-dotfiles'. At some point I must have changed this.
 
@@ -563,7 +565,7 @@ I was messing around on github and accidently added a 'yaml' file to my repo. I 
 
 Gist is a really great way to paste stuff (like system journals) to github directly from the command line. This was a huge help when I messed up synergy and my system hung on boot / wouldn't even start. You have to first install the `gist` package and then set it up on github, the process was really easy - you do it through the command line and it gives you some token to enter on github. Then you can save boot journals to gist for debugging in case you mess up your system like I did with synergy.
 
-`journalctl - b | gist -p`
+`$ journalctl - b | gist -p`
 
 ---
 
@@ -581,7 +583,7 @@ Install `devtools` and `vifm`
 #### Create the file /etc/pacman.d/aurpkgs
 
 Create the file
-`sudo touch /etc/pacman.d/aurpkgs`
+`# touch /etc/pacman.d/aurpkgs`
 Write the file
 
 ```#
@@ -613,26 +615,26 @@ Add this line to the bottom of the file
 
 #### Synchronize pacman
 
-`sudo pacman -Syu`
+`# pacman -Syu`
 
 ### Install AUR package
 
 #### Build foo and its dependencies in an nspawn container
 
-`aursync -c foo`
+`$ aursync -c foo`
 TIP: to quit vifm, type `:q`
 
 #### Synchronize pacman with AUR package
 
-`sudo pacman -Syu`
+`# pacman -Syu`
 
 #### Install package
 
-`sudo pacman -S foo`
+`# pacman -S foo`
 
 ### Update AUR packages
 
-`aursync -u`
+`$ aursync -u`
 
 ### Removing AUR packages
 
@@ -644,9 +646,9 @@ Confirm the package is no longer installed
 
 #### Once the package is no longer installed, remove the package from the repository
 
-`repo-remove /var/cache/pacman/aurpkgs/aurpkgs.db.tar foo`
+`$ repo-remove /var/cache/pacman/aurpkgs/aurpkgs.db.tar foo`
 Refresh package databases
-`sudo pacman -Syu`
+`# pacman -Syu`
 AUR package removed!
 
 ### Migrate existing AUR packages
@@ -654,7 +656,7 @@ AUR package removed!
 Find the package tar.xz file
 `~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
 Add the package file to the AUR local repository
-`repo-add /var/cache/pacman/aurpkgs/aurpkgs.db.tar ~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
+`$ repo-add /var/cache/pacman/aurpkgs/aurpkgs.db.tar ~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
 
 ### Query explicitly installed AUR packages
 
@@ -665,7 +667,7 @@ Add the package file to the AUR local repository
 ## pandoc {#pandoc}  
 
 Convert markdown file to a latex formatted PDF  
-`pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
+`$ pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
 
 ---
 
@@ -675,7 +677,7 @@ Convert markdown file to a latex formatted PDF
 
 Check public IP address (google 'what is my ip')
 
-Edit file: /var/run/NetworkManager/resolv.conf and change the address after nameserver to 1.1.1.1
+Edit file: `/var/run/NetworkManager/resolv.conf` and change the address after nameserver to 1.1.1.1
 
 ```
 # Generated by NetworkManager
@@ -684,7 +686,7 @@ nameserver 1.1.1.1
 ```
 
 Start systemd-resolved.service
-`# sudo systemctl start systemd-resolved.service`
+`# systemctl start systemd-resolved.service`
 
 Check to confirm you can still connect to the innernette
 
@@ -733,10 +735,10 @@ Don't forget to logout
 I have no idea how I set up the SSH connection unfortunately.
 
 To pull a file from Giant to Symphonic from Symphonic's terminal
-`rsync -P bgdawes@giant:/home/bgdawes/Documents/test.txt /home/bgdawes/Documents/temp`
+`$ rsync -P bgdawes@giant:/home/bgdawes/Documents/test.txt /home/bgdawes/Documents/temp`
 
 To pull a folder from Giant to Symphonic from Symphonic's terminal
-`rsync -P -r bgdawes@giant:/home/bgdawes/Documents/foldername /home/bgdawes/Documents/temp`
+`$ rsync -P -r bgdawes@giant:/home/bgdawes/Documents/foldername /home/bgdawes/Documents/temp`
 
 ---
 
