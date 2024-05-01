@@ -12,6 +12,7 @@ Contents
 8. [Rsync & SSH](#rsyncssh)
 9. [Synergy](#synergy)
 10. [Stow](#stow)
+11. [RetroArch](#retroarch)
 
 Appendix
 
@@ -662,6 +663,32 @@ Add the package file to the AUR local repository
 
 `# pacman -Sl aurpkgs`
 
+### Reinstall aurutils
+
+Every once in awhile, aurutils won't update itself. I asked about this in the arch forums and was told to just manually install the current version using `aur-fetch` and `aur-build`. I do this by following the steps below:
+
+Change the directory to the folder where the aurutils AUR package will be saved:
+
+`$ cd pkgbuilds`
+
+Use `aur-fetch` to download `aurutils` from the AUR
+
+`$ aur fetch aurutils`
+
+Change the directory to the folder where the PKGBUILD file is located:
+
+`$ cd /home/bgdawes/pkgbuilds/aurutils`
+
+Use `aur-build` to build the package
+
+`$ aur build aurutils`
+
+None of this may be needed:
+
+https://archlinux.org/news/switch-to-the-base-devel-meta-package-requires-manual-intervention/
+
+https://forum.endeavouros.com/t/aur-update-failure-cannot-find-the-debugedit-binary/53062/13
+
 ---
 
 ## pandoc {#pandoc}  
@@ -696,8 +723,8 @@ Start windscribe service
 Login to windscribe
 `$ windscribe login`
 
-Turn on firewall
-`$ windscribe firewall on`
+Turn firewall off. I used to turn the firewall on but it screws with the connection to much.
+`$ windscribe firewall off`
 
 Connect to windscribe
 `$ windscribe connect`
@@ -879,6 +906,34 @@ Create symlink to where the new stow file should go. Note: you may need to run t
 I'm still not quite sure how stow works but I've got it to work the way I want it to work. In the example above I had to use the -t command to get the symlink established. I think this might be because the file I wanted to stow is in /etc/? Regardless, next time you want to stow something, hopefully this will help.
 
 Reference that helped me to understand stow a little better: https://gist.github.com/andreibosco/cb8506780d0942a712fc
+
+## RetroArch {#retroarch}
+
+RetroArch is awesome but it's tricky to configure and I've been having so much fun with it that I want to document how I've set this up (from what I can remember).
+
+Install `retroarch`, `retroarch-assets-xmb`, `retroarch-assets-ozone`, and `gamemode`.
+
+Run `retroarch` and change the user interface to 'ozone'. Navigate to Settings > User Interface > Menu (all the way at the bottom of the menu). Restart.
+
+In the GUI, 'enter' cycles forward through the menus and 'backspace' cycles back.
+
+Enable 'Game Mode'. Navigate to Settings > Latency > Game Mode (all the way at the bottom of the menu.) Switch it to on. Restart
+
+Download cores, assets, controller profiles, cheats, databases, overlays, and shaders with the 'online updater'. If you don't see this in the main menu then update the `~/.config/retroarch/retroarch.cfg` file and update this line to be `menu_show_core_updater = "true"`.
+
+Import games and update thumbnails. I have no idea how I did this but it can't be too hard.
+
+### Configure Cores
+
+After loading a game, hit F1 (I kinda can't believe this works because I have sxhkd assigned to F1 for bspwm) and it'll bring up the 'quick menu'.
+
+Add shaders: I've only been playing cores 16-bit and below so the shader `/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them.
+
+Configure joysticks: this was tricky. I have a NES and SNES gamepad that `udev` recognizies as the same thing. I set global controls for the SNES gamepad and then set specific controls for the NES core and SNES core. You should be able to figure this out. Just remember to set 'core specific' gamepad controls. I also bought a sega genesis controller and it has a different udev profile and basically configured itself so that's cool.
+
+Add overlays: overlays are fun. yay. the only worth overlays availavble via retroarch online updater are for the NES / SNES.
+
+Save Core configuration: you should be able to figure this out.
 
 ---
 
