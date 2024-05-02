@@ -936,10 +936,15 @@ Add overlays: overlays are fun. yay. the only worth overlays availavble via retr
 Save Core configuration: you should be able to figure this out.
 
 Genesis USB controller setup - this one took me awhile so I wanted to document.
+
 Use default controller setup
+
 Change controls in the genesis core to be the following:
+
 B button should be assigned to A
+
 C button should be assigned to B
+
 Z button should be assigned to C
 
 ---
