@@ -947,6 +947,10 @@ C button should be assigned to B
 
 Z button should be assigned to C
 
+### Cheats
+
+https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
+
 ---
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
