@@ -931,9 +931,9 @@ Add shaders: I've only been playing cores 16-bit and below so the shader `/shade
 
 Configure joysticks: this was tricky. I have a NES and SNES gamepad that `udev` recognizies as the same thing. I set global controls for the SNES gamepad and then set specific controls for the NES core and SNES core. You should be able to figure this out. Just remember to set 'core specific' gamepad controls. I also bought a sega genesis controller and it has a different udev profile and basically configured itself so that's cool.
 
-Add overlays: overlays are fun. yay. the only worth overlays availavble via retroarch online updater are for the NES / SNES.
+Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
 
-Save Core configuration: you should be able to figure this out.
+Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
 
 ### Genesis USB controller setup
 
@@ -946,6 +946,8 @@ B button should be assigned to A
 C button should be assigned to B
 
 Z button should be assigned to C
+
+Save Core configuration
 
 ### Cheats
 
