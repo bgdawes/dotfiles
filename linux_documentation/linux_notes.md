@@ -704,6 +704,15 @@ Convert markdown file to a latex formatted PDF
 
 Check public IP address (google 'what is my ip')
 
+Start windscribe service
+`# systemctl start windscribe`
+
+Login to windscribe
+`$ windscribe login`
+
+Turn firewall off. I used to turn the firewall on but it screws with the connection to much.
+`$ windscribe firewall off`
+
 Edit file: `/var/run/NetworkManager/resolv.conf` and change the address after nameserver to 1.1.1.1
 
 ```
@@ -716,15 +725,6 @@ Start systemd-resolved.service
 `# systemctl start systemd-resolved.service`
 
 Check to confirm you can still connect to the innernette
-
-Start windscribe service
-`# systemctl start windscribe`
-
-Login to windscribe
-`$ windscribe login`
-
-Turn firewall off. I used to turn the firewall on but it screws with the connection to much.
-`$ windscribe firewall off`
 
 Connect to windscribe
 `$ windscribe connect`
