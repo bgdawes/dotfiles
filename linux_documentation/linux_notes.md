@@ -921,33 +921,44 @@ Enable 'Game Mode'. Navigate to Settings > Latency > Game Mode (all the way at t
 
 Download cores, assets, controller profiles, cheats, databases, overlays, and shaders with the 'online updater'. If you don't see this in the main menu then update the `~/.config/retroarch/retroarch.cfg` file and update this line to be `menu_show_core_updater = "true"`.
 
-Import games and update thumbnails. I have no idea how I did this but it can't be too hard.
+Import games by selecting import content on the main menu and update thumbnails available under the online updater.
+
+### Delete Playlists
+
+I fucked around and messed up some shit with the NES emulator and had to delete all things NES related in this folder: ~/.config/retroarch/playlists. Later I figured out that I can just delete playlists directly in retroarch under 'manage playlists'. Also, my rom set for NES messed up and wouldn't download thumbnails so I downloaded a new rom set from RW and it worked (I think because the file names of the roms follow the 'no-intro' naming convention).
 
 ### Configure Cores
 
 After loading a game, hit F1 (I kinda can't believe this works because I have sxhkd assigned to F1 for bspwm) and it'll bring up the 'quick menu'.
 
-Add shaders: I've only been playing cores 16-bit and below so the shader `/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them.
-
-Configure joysticks: this was tricky. I have a NES and SNES gamepad that `udev` recognizies as the same thing. I set global controls for the SNES gamepad and then set specific controls for the NES core and SNES core. You should be able to figure this out. Just remember to set 'core specific' gamepad controls. I also bought a sega genesis controller and it has a different udev profile and basically configured itself so that's cool.
+Add shaders: I've only been playing cores 16-bit and below so the shader `/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
 
 Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
 
 Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
 
-### Genesis USB controller setup
+IMPORTANT NOTE FOR SEGA MASTER SYSTEM / GENESIS OVERRIDES: Both SMS and Genesis use the same core so you need to save everything using content directory overrides.
+
+Also, set a default core for each playlist.
+
+### Configure joysticks
+I way over-complicated controller setup. I took inspiration from this reddit post (https://www.reddit.com/r/RetroArch/comments/vq8wyw/guide_how_to_assign_multiple_different/). I literally just plugged in each controller and saved each controller using it's default profile. Then I configured buttons by core (example: 8bitdo_NES_remap.rmp). 
+
+8bitdo controller setup notes - I swaped buttons II and IV for the turbo-grafix 16, I also had to map button A to C and X to B for the sega master system and lastly I swapped buttons X and B on the NES core.
+
+I watched a youtube video to set up the N64 pad - the trick here was that the yellow buttons are considered the 'right joystick'.
+
+#### Genesis USB controller setup
 
 This one took me awhile so I wanted to document.
 
-Use default controller setup. Change controls in the genesis core to be the following:
+Use default controller setup. IMPORTANT NOTE FOR SEGA MASTER SYSTEM / GENESIS OVERRIDES: Both SMS and Genesis use the same core so you need to save everything using content directory overrides. Change controls to:
 
 B button should be assigned to A
 
 C button should be assigned to B
 
 Z button should be assigned to C
-
-Save Core configuration
 
 ### Cheats
 
