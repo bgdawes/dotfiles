@@ -27,6 +27,7 @@ bspc config pointer_action1 move
 bspc rule -a Plank layer=above manage=on border=off focus=off locked=on
 bspc rule -a firefox desktop=^1 follow=on
 bspc rule -a tellico desktop=^2 follow=on
+bspc rule -a calibre desktop=^3 follow=on
 bspc rule -a code-oss desktop=^3 follow=on
 bspc rule -a retroarch desktop=^4 follow=on
 bspc rule -a libreoffice-startcenter desktop=^4 follow=on
