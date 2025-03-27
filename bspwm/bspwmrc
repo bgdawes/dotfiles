@@ -34,7 +34,7 @@ bspc rule -a libreoffice-startcenter desktop=^4 follow=on
 bspc rule -a Soffice desktop=^4 follow=on
 bspc rule -a Hexchat desktop=^5 follow=on
 bspc rule -a discord desktop=^6 follow=on
-bspc rule -a Thunar desktop=^7 follow=on
+bspc rule -a Thunar desktop=^4 follow=on
 bspc rule -a Deluge-gtk desktop=^7 follow=on
 bspc rule -a Thunar follow=on
 bspc rule -a Wrapper-2.0 state=floating
