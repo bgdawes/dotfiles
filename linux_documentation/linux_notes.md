@@ -445,6 +445,7 @@ Keep everything except audio streams #4 (at offset 3) and #7 (at offset 6):
 `$ ffmpeg -i input -map 0 -map -0:a:3 -map -0:a:6 -c copy output`
 
 Audio editing - use ffmpeg to convert audio file format
+
 `ffmpeg -i inputFile.ogg outputFile.mp3`
 
 ---
