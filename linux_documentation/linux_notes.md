@@ -937,6 +937,8 @@ After loading a game, hit F1 (I kinda can't believe this works because I have sx
 
 Add shaders: I've only been playing cores 16-bit and below so the shader `/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
 
+The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/crt/crt-aperture.glslp`
+
 Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
 
 Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
