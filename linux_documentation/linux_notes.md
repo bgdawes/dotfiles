@@ -896,6 +896,10 @@ synergyc symphonic
 
 I originally installed synergy 1 but it got laggy / buggy, then I installed Synergy 3 (Synergy 3 RC3) and everything works well (knock on wood). I spent hours trying to add `symphonic` as a computer to get this to work but the connection would always fail. Finally I clicked (or slid the switch) on 'manual config'. That brought up a menu where I could add the host name and wifi ip of `symphonic`. After that, everything works perfectly.
 
+## YAC Reader {#yacreader}
+
+To load PDF and CBR files to iPad to be viewed on YAC Reader, connect iPad to compruter, then copy PDF and / or CBR files to the iPad YAC folder. On the iPad, click the import button at the top and then click the File Sharing button. Click the import button. You should see the file transfer progress at the top right.
+
 ## Stow {#stow}
 
 Move new stow file to dotfiles folder
