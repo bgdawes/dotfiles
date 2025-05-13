@@ -415,7 +415,6 @@ To switch back to netctl, simply execute the enable / disable commands above aga
 
 System install date
 `$ head -n 1 /var/log/pacman.log`
-
 `# tune2fs -l /dev/sda3 | grep created`
 
 Kill process
