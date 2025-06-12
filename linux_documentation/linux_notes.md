@@ -947,6 +947,8 @@ Add shaders: I've only been playing cores 16-bit and below so the shader `/shade
 
 The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/crt/crt-aperture.glslp`
 
+Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME/
+
 Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
 
 Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
