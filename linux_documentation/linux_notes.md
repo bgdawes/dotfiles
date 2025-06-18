@@ -943,7 +943,9 @@ I fucked around and messed up some shit with the NES emulator and had to delete 
 
 After loading a game, hit F1 (I kinda can't believe this works because I have sxhkd assigned to F1 for bspwm) and it'll bring up the 'quick menu'.
 
-Add shaders: I've only been playing cores 16-bit and below so the shader `/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
+Add shaders: I've only been playing cores 16-bit and below so the shader `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
+Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`
+Shaders weren't showing up so I changed Drivers under Settings > 
 
 The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/crt/crt-aperture.glslp`
 
@@ -975,6 +977,64 @@ B button should be assigned to A
 C button should be assigned to B
 
 Z button should be assigned to C
+
+### RetroArch restore notes
+
+I used to use a single core for both SMS and Genesis games. I wanted to use separate cores instead. For whatever reason, the genesis core wouldn't save overrides. I basically gutted as many config / history files that I could and removed all cores. I then downloaded all the cores I use again through the online updater. When I tried to reload the cores it failed so I found this https://www.reddit.com/r/RetroArch/comments/18p94gi/failed_to_install_every_core/ and updated these lines in `~/.config/retroarch/retroarch.cfg`:
+
+FROM:
+
+libretro_directory = "/usr/lib/libretro"
+libretro_info_path = "/usr/share/libretro/info"
+
+TO:
+
+libretro_directory = "~/.config/retroarch/cores"
+libretro_info_path = "~/.config/retroarch/cores/info"
+
+This worked and I didn't have to reinstall the cores.
+
+These are the cores I like for each system:
+
+Atari: Stella
+TG-16: Beetle PCE Fast
+N64: ParaLLEI N64
+NES: Mesen
+SNES: Snes9x
+SMS: SMS Plus GX
+Genesis: 
+
+Thumbnails: to update thumbnails go to Main Menu > Online Updater > Playlist Thumbnail Updater
+This updated almost all SMS thumbnails
+
+At the bottom of Main Menu > Online Updater update everything: 'Update Core Info Files' through 'Update GLSL Shaders'
+
+Had a problem with shaders. Couldn't select the best shader `crt-royale-fake-bloom-intel.glslp`. Updated cfg file:
+
+FROM:
+
+video_shader_dir = "/usr/share/libretro/shaders"
+video_shader_enable = "false"
+
+TO:
+
+video_shader_dir = "~/.config/retroarch/shaders"
+video_shader_enable = "true"
+
+video_shader_remember_last_dir = "true"
+
+That fixed shader problems for all cores using this shader.
+
+I lost my overlay for SNES; this is a non-issue. I just resaved it and it worked
+
+For my genesis problems, I think it's the core: BlastEm. The shader wouldn't save to the core so I copied: `/home/bgdawes/.config/retroarch/config/SMS Plus GX/SMS Plus GX.glslp` to `/home/bgdawes/.config/retroarch/config/BlastEm/BlastEm.glslp`. That fixed the shader saving but I'm still gonna delete the core and try the Genesis Plus GX core.
+
+https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/
+https://www.reddit.com/r/RetroArch/comments/7n94x3/how_do_i_delete_game_history_in_retroarch/
+https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/
+https://forums.launchbox-app.com/topic/79126-retroarch-overrides-wont-let-me-save-configuration/
+https://www.reddit.com/r/RetroArch/comments/1aorbbz/i_cant_save_overrides/
+https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_to_have_any_options_at/
 
 ### Cheats
 
