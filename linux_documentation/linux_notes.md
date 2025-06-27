@@ -906,6 +906,8 @@ To load PDF and CBR files to iPad to be viewed on YAC Reader, connect iPad to co
 
 ## Stow {#stow}
 
+Make sure to check file permissions!
+
 Move new stow file to dotfiles folder
 `# mv /etc/synergy.conf /home/bgdawes/dotfiles/etc/`
 
