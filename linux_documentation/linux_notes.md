@@ -452,6 +452,10 @@ Audio editing - use ffmpeg to convert audio file format
 
 `ffmpeg -i inputFile.ogg outputFile.mp3`
 
+Compressing / zip multiple files individually in a directory. I had a bunch of files I wanted to compress individually and was able to do this using the following command in the terminal:
+
+`find /home/bgdawes/games/neosd/neo_geo_zip_test -type f -execdir zip '{}.zip' '{}' \;`
+
 ---
 
 ## Git[^6] {#git}
