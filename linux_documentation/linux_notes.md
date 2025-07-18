@@ -955,15 +955,15 @@ After loading a game, hit F1 (I kinda can't believe this works because I have sx
 
 Core list:
 
-Atari (Stella 2023)
-Turbo-Grafix 16 (Beetle PCE FAST)
-Game Boy Advance (mGBA)
-Nintendo 64 (ParaLLEI N64)
-NES (Mesen)
-SNES (Snes9x)
-Sega Master System (SMS Plus GX)
-Sega Genesis (Genesis Plus GX)
-Neo Geo (Geolith)
+Atari (Stella 2023)  
+Turbo-Grafix 16 (Beetle PCE FAST)  
+Game Boy Advance (mGBA)  
+Nintendo 64 (ParaLLEI N64)  
+NES (Mesen)  
+SNES (Snes9x)  
+Sega Master System (SMS Plus GX)  
+Sega Genesis (Genesis Plus GX)  
+Neo Geo (Geolith)  
 
 #### Shaders
 
@@ -977,17 +977,17 @@ Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME
 
 Shader list (I customized the Neo Geo shader):
 
-Atari (Stella 2023) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-Turbo-Grafix 16 (Beetle PCE FAST) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-Game Boy Advance (mGBA) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-Nintendo 64 (ParaLLEI N64) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-aperture.glsl
-NES (Mesen) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-SNES (Snes9x) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-Sega Master System (SMS Plus GX) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-Sega Genesis (Genesis Plus GX) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
-*Neo Geo (Geolith) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-geom.glsl
+Atari (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Game Boy Advance (mGBA) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Nintendo 64 (ParaLLEI N64) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-aperture.glsl`  
+NES (Mesen) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+SNES (Snes9x) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Sega Master System (SMS Plus GX) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Sega Genesis (Genesis Plus GX) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+*Neo Geo (Geolith) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-geom.glsl`  
 
-* I customized the Neo Geo shader
+*I customized the Neo Geo shader
 
 #### Overlays
 
