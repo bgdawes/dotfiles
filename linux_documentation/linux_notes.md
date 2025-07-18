@@ -904,9 +904,13 @@ synergyc symphonic
 
 I originally installed synergy 1 but it got laggy / buggy, then I installed Synergy 3 (Synergy 3 RC3) and everything works well (knock on wood). I spent hours trying to add `symphonic` as a computer to get this to work but the connection would always fail. Finally I clicked (or slid the switch) on 'manual config'. That brought up a menu where I could add the host name and wifi ip of `symphonic`. After that, everything works perfectly.
 
+---
+
 ## YAC Reader {#yacreader}
 
 To load PDF and CBR files to iPad to be viewed on YAC Reader, connect iPad to compruter, then copy PDF and / or CBR files to the iPad YAC folder. On the iPad, click the import button at the top and then click the File Sharing button. Click the import button. You should see the file transfer progress at the top right.
+
+---
 
 ## Stow {#stow}
 
@@ -925,6 +929,8 @@ I'm still not quite sure how stow works but I've got it to work the way I want i
 
 Reference that helped me to understand stow a little better: https://gist.github.com/andreibosco/cb8506780d0942a712fc
 
+---
+
 ## RetroArch {#retroarch}
 
 RetroArch is awesome but it's tricky to configure and I've been having so much fun with it that I want to document how I've set this up (from what I can remember).
@@ -939,40 +945,77 @@ Enable 'Game Mode'. Navigate to Settings > Latency > Game Mode (all the way at t
 
 Download cores, assets, controller profiles, cheats, databases, overlays, and shaders with the 'online updater'. If you don't see this in the main menu then update the `~/.config/retroarch/retroarch.cfg` file and update this line to be `menu_show_core_updater = "true"`.
 
-Import games by selecting import content on the main menu and update thumbnails available under the online updater.
+### Playlists
 
-### Delete Playlists
-
-I fucked around and messed up some shit with the NES emulator and had to delete all things NES related in this folder: ~/.config/retroarch/playlists. Later I figured out that I can just delete playlists directly in retroarch under 'manage playlists'. Also, my rom set for NES messed up and wouldn't download thumbnails so I downloaded a new rom set from RW and it worked (I think because the file names of the roms follow the 'no-intro' naming convention).
+Create a playlist by importing games. Select import content on the main menu and update thumbnails available under the online updater. Set a default core for each playlist.
 
 ### Configure Cores
 
-After loading a game, hit F1 (I kinda can't believe this works because I have sxhkd assigned to F1 for bspwm) and it'll bring up the 'quick menu'.
+After loading a game, hit F1 (I kinda can't believe this works because I have sxhkd assigned to F1 for bspwm) and it'll bring up the 'quick menu'. Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
+
+Core list:
+
+Atari (Stella 2023)
+Turbo-Grafix 16 (Beetle PCE FAST)
+Game Boy Advance (mGBA)
+Nintendo 64 (ParaLLEI N64)
+NES (Mesen)
+SNES (Snes9x)
+Sega Master System (SMS Plus GX)
+Sega Genesis (Genesis Plus GX)
+Neo Geo (Geolith)
+
+#### Shaders
 
 Add shaders: I've only been playing cores 16-bit and below so the shader `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
-Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`
-Shaders weren't showing up so I changed Drivers under Settings > 
+
+Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` shaders weren't showing up so I changed Drivers under Settings to `gl`
 
 The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/crt/crt-aperture.glslp`
 
 Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME/
 
+Shader list (I customized the Neo Geo shader):
+
+Atari (Stella 2023) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+Turbo-Grafix 16 (Beetle PCE FAST) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+Game Boy Advance (mGBA) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+Nintendo 64 (ParaLLEI N64) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-aperture.glsl
+NES (Mesen) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+SNES (Snes9x) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+Sega Master System (SMS Plus GX) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+Sega Genesis (Genesis Plus GX) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp
+*Neo Geo (Geolith) - /home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-geom.glsl
+
+* I customized the Neo Geo shader
+
+#### Overlays
+
 Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
 
-Save Core configuration: on 'quick menu' navigate to 'Overrides' then select 'Save Core Overrides'. This will save your shaders, overlays, and controls.
+https://forums.libretro.com/t/console-game-themed-bezels/10472
 
-IMPORTANT NOTE FOR SEGA MASTER SYSTEM / GENESIS OVERRIDES: Both SMS and Genesis use the same core so you need to save everything using content directory overrides.
+Overlay list:
 
-Also, set a default core for each playlist.
+Atari (custom)
+Turbo-Grafix 16 (custom)
+Game Boy Advance (custom)
+Nintendo 64 (custom)
+NES (built-in)
+SNES (built-in)
+Sega Master System (custom)
+Sega Genesis (built-in)
+Neo Geo (custom)
 
-### Configure joysticks
+#### Controllers
+
 I way over-complicated controller setup. I took inspiration from this reddit post (https://www.reddit.com/r/RetroArch/comments/vq8wyw/guide_how_to_assign_multiple_different/). I literally just plugged in each controller and saved each controller using it's default profile. Then I configured buttons by core (example: 8bitdo_NES_remap.rmp). 
 
 8bitdo controller setup notes - I swaped buttons II and IV for the turbo-grafix 16, I also had to map button A to C and X to B for the sega master system and lastly I swapped buttons X and B on the NES core.
 
 I watched a youtube video to set up the N64 pad - the trick here was that the yellow buttons are considered the 'right joystick'.
 
-#### Genesis USB controller setup
+##### Genesis USB controller setup
 
 This one took me awhile so I wanted to document.
 
