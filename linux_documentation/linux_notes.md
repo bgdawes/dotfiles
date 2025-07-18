@@ -997,15 +997,15 @@ https://forums.libretro.com/t/console-game-themed-bezels/10472
 
 Overlay list:
 
-Atari (custom)
-Turbo-Grafix 16 (custom)
-Game Boy Advance (custom)
-Nintendo 64 (custom)
-NES (built-in)
-SNES (built-in)
-Sega Master System (custom)
-Sega Genesis (built-in)
-Neo Geo (custom)
+Atari (custom)  
+Turbo-Grafix 16 (custom)  
+Game Boy Advance (custom)  
+Nintendo 64 (custom)  
+NES (built-in)  
+SNES (built-in)  
+Sega Master System (custom)  
+Sega Genesis (built-in)  
+Neo Geo (custom)  
 
 #### Controllers
 
