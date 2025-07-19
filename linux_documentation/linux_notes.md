@@ -975,7 +975,7 @@ The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/cr
 
 Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME/
 
-Shader list (I customized the Neo Geo shader):
+Shader list:
 
 Atari (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
