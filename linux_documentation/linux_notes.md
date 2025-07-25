@@ -955,7 +955,10 @@ After loading a game, hit F1 (I kinda can't believe this works because I have sx
 
 Core list:
 
-Atari (Stella 2023)  
+Arcade (FinalBurn Neo)  
+Atari 2600 (Stella 2023)  
+Atari Lynx (Handy)  
+ColecoVision (Gearcoleco)  
 Turbo-Grafix 16 (Beetle PCE FAST)  
 Game Boy Advance (mGBA)  
 Nintendo 64 (ParaLLEI N64)  
@@ -963,13 +966,14 @@ NES (Mesen)
 SNES (Snes9x)  
 Sega Master System (SMS Plus GX)  
 Sega Genesis (Genesis Plus GX)  
+Sega 32X (PicoDrive)  
 Neo Geo (Geolith)  
 
 #### Shaders
 
 Add shaders: I've only been playing cores 16-bit and below so the shader `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
 
-Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` shaders weren't showing up so I changed Drivers under Settings to `gl`
+Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` shaders weren't showing up after I gutted retroarch so I changed Drivers under Settings to `gl` and that restored the shaders.
 
 The best N64 shader I've found is `crt-aperture.glslp` `/shaders/shaders_glsl/crt/crt-aperture.glslp`
 
@@ -977,7 +981,10 @@ Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME
 
 Shader list:
 
-Atari (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Arcade (FinalBurn Neo) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-geom.glslp`  
+Atari 2600 (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Atari Lynx (Handy) - `tbd`  
+ColecoVision (Gearcoleco) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Game Boy Advance (mGBA) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Nintendo 64 (ParaLLEI N64) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-aperture.glsl`  
@@ -985,9 +992,13 @@ NES (Mesen) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-roya
 SNES (Snes9x) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Sega Master System (SMS Plus GX) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Sega Genesis (Genesis Plus GX) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Sega 32X (PicoDrive) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 *Neo Geo (Geolith) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-geom.glsl`  
 
-*I customized the Neo Geo shader
+*I customized the Neo Geo shader - updated lines below:
+
+// Texture coordinates of the texel containing the active pixel.
+	vec2 xy = (CURVATURE > 1.0) ? transform(TEX0.xy) : TEX0.xy;
 
 #### Overlays
 
@@ -997,7 +1008,10 @@ https://forums.libretro.com/t/console-game-themed-bezels/10472
 
 Overlay list:
 
-Atari (custom)  
+Arcade (custom)  
+Atari 2600 (custom)  
+Atari Lynx (custom)  
+ColecoVision (custom)  
 Turbo-Grafix 16 (custom)  
 Game Boy Advance (custom)  
 Nintendo 64 (custom)  
@@ -1005,6 +1019,7 @@ NES (built-in)
 SNES (built-in)  
 Sega Master System (custom)  
 Sega Genesis (built-in)  
+Sega 32X (built-in)  
 Neo Geo (custom)  
 
 #### Controllers
@@ -1019,7 +1034,7 @@ I watched a youtube video to set up the N64 pad - the trick here was that the ye
 
 This one took me awhile so I wanted to document.
 
-Use default controller setup. IMPORTANT NOTE FOR SEGA MASTER SYSTEM / GENESIS OVERRIDES: Both SMS and Genesis use the same core so you need to save everything using content directory overrides. Change controls to:
+ Use default controller setup. Change controls to:
 
 B button should be assigned to A
 
