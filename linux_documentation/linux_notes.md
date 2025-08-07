@@ -945,6 +945,13 @@ Enable 'Game Mode'. Navigate to Settings > Latency > Game Mode (all the way at t
 
 Download cores, assets, controller profiles, cheats, databases, overlays, and shaders with the 'online updater'. If you don't see this in the main menu then update the `~/.config/retroarch/retroarch.cfg` file and update this line to be `menu_show_core_updater = "true"`.
 
+##### MAME Notes
+
+MAME is a little tricky to set up. Finding the ROMS and figuring out which cores to use was complicated. The best ROMS I found were both on the internet archive. Each romset needs their own specific core listed below:
+
+FinalBurn Neo romset: https://archive.org/details/cylums-final-burn-neo-rom-collection  
+MAME 2000 romset: https://archive.org/details/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples
+
 ### Playlists
 
 Create a playlist by importing games. Select import content on the main menu and update thumbnails available under the online updater. Set a default core for each playlist.
@@ -956,7 +963,9 @@ After loading a game, hit F1 (I kinda can't believe this works because I have sx
 Core list:
 
 Arcade (FinalBurn Neo)  
+Arcade (MAME 2000)  
 Atari 2600 (Stella 2023)  
+Atari Jaguar (Virtual Jaguar)  
 Atari Lynx (Handy)  
 ColecoVision (Gearcoleco)  
 Turbo-Grafix 16 (Beetle PCE FAST)  
@@ -982,8 +991,10 @@ Shaders are saved by core here: /home/bgdawes/.config/retroarch/config/CORE_NAME
 Shader list:
 
 Arcade (FinalBurn Neo) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-geom.glslp`  
+Arcade (MAME 2000) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-geom.glslp`  
 Atari 2600 (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
-Atari Lynx (Handy) - `tbd`  
+Atari Jaguar (Virtual Jaguar) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Atari Lynx (Handy) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/handheld/ags001.glslp`  
 ColecoVision (Gearcoleco) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Game Boy Advance (mGBA) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
