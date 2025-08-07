@@ -1021,6 +1021,7 @@ Overlay list:
 
 Arcade (custom)  
 Atari 2600 (custom)  
+Atari Jaguar (custom)
 Atari Lynx (custom)  
 ColecoVision (custom)  
 Turbo-Grafix 16 (custom)  
