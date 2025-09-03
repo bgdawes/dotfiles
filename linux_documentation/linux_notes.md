@@ -456,6 +456,10 @@ Compressing / zip multiple files individually in a directory. I had a bunch of f
 
 `find /home/bgdawes/games/neosd/neo_geo_zip_test -type f -execdir zip '{}.zip' '{}' \;`
 
+List running systemd services:
+
+`systemctl list-units --type=service --state=running`
+
 ---
 
 ## Git[^6] {#git}
@@ -701,6 +705,29 @@ https://archlinux.org/news/switch-to-the-base-devel-meta-package-requires-manual
 
 https://forum.endeavouros.com/t/aur-update-failure-cannot-find-the-debugedit-binary/53062/13
 
+##### Installing AUR packages with aurutils >= 20.5.2-1
+
+When I tried to install a package from the AUR after updating to version 20.5.2-1, I received the following error:
+
+    Error:
+        aur-chroot could not find a pacman.conf(5) file for container usage. Before
+        using aur-chroot, make sure this file is created and valid. See OPTIONS in
+        aur-chroot(1) for configuration details.
+    
+        The following file paths were checked:
+            '/etc/aurutils/pacman-x86_64.conf'
+            '/usr/share/devtools/pacman.conf.d/aurutils-x86_64.conf'
+
+To fix this, I created a pacman file specifically for aurutils `pacman-x86_64.conf`, saved it in the `/etc/aurutils/` folder, and posted the file on github. The next step is to remove `/var/lib/aurbuild/x86_64/root` and recreate it with `aur chroot --create` (as helpfully instructed on the Arch forums, link below)
+
+https://bbs.archlinux.org/viewtopic.php?pid=2250579#p2250579
+
+`# rm -r /var/lib/aurbuild/x86_64/root`
+
+`$ aur chroot --create`
+
+Fixed!
+
 ---
 
 ## pandoc {#pandoc}  
@@ -944,6 +971,8 @@ In the GUI, 'enter' cycles forward through the menus and 'backspace' cycles back
 Enable 'Game Mode'. Navigate to Settings > Latency > Game Mode (all the way at the bottom of the menu.) Switch it to on. Restart
 
 Download cores, assets, controller profiles, cheats, databases, overlays, and shaders with the 'online updater'. If you don't see this in the main menu then update the `~/.config/retroarch/retroarch.cfg` file and update this line to be `menu_show_core_updater = "true"`.
+
+To zip multiple files into their own individual zip files use this command: `find /home/bgdawes/games/neo_geo_roms/NeoSD -type f -execdir zip '{}.zip' '{}' \;`
 
 ##### MAME Notes
 
