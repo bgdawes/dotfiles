@@ -741,6 +741,8 @@ Convert markdown file to a latex formatted PDF
 
 ### Connect to Windscribe VPN
 
+Change protocol to UDP!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 Check public IP address (google 'what is my ip')
 
 Start windscribe service
@@ -981,6 +983,8 @@ MAME is a little tricky to set up. Finding the ROMS and figuring out which cores
 FinalBurn Neo romset: https://archive.org/details/cylums-final-burn-neo-rom-collection  
 MAME 2000 romset: https://archive.org/details/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples
 
+To rotate the screen when the display is vertical, navigate to: Settings > Video > Output > Video Rotation. Select the option to display the screen correctly and then navigate to: Quick Menu > Overrides > Save Game Overrides. This will save the screen rotation for the particular game.
+
 ### Playlists
 
 Create a playlist by importing games. Select import content on the main menu and update thumbnails available under the online updater. Set a default core for each playlist.
@@ -1000,6 +1004,29 @@ ColecoVision (Gearcoleco)
 Turbo-Grafix 16 (Beetle PCE FAST)  
 Game Boy Advance (mGBA)  
 Nintendo 64 (ParaLLEI N64)  
+NES (Mesen)  
+SNES (Snes9x)  
+Sega Master System (SMS Plus GX)  
+Sega Genesis (Genesis Plus GX)  
+Sega 32X (PicoDrive)  
+Neo Geo (Geolith)  
+
+### ROM file locations
+
+The list below contains the rom file locations for each core: 
+
+Core list:
+
+Arcade (FinalBurn Neo) - /home/bgdawes/games/cylums-final-burn-neo-rom-collection/Cylum's FinalBurn Neo ROM Collection (02-18-21)/  
+Arcade (MAME 2000) - /home/bgdawes/games/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples/roms/  
+Atari 2600 (Stella 2023) - /home/bgdawes/games/Atari - 2600/  
+Atari Jaguar (Virtual Jaguar) - /home/bgdawes/games/Atari - Jaguar/  
+Atari Lynx (Handy) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Atari - Lynx (LYX)/  
+ColecoVision (Gearcoleco) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Coleco - ColecoVision/  
+Turbo-Grafix 16 (Beetle PCE FAST) - /home/bgdawes/games/retro-within/Complete NTSC-US TurboGrafx-16 Roms - Videos - Manuals Collection/NTSC-US TurboGrafx-16 Roms/  
+Game Boy Advance (mGBA) - /home/bgdawes/games/roms-bestset-nintendo-game-boy-advance/  
+Nintendo 64 (ParaLLEI N64) - /home/bgdawes/games/retro-within/Complete NTSC-US Nintendo 64 Roms - Videos - Manuals Collection/NTSC-US Nintendo 64 Roms/  
+******************* - /home/bgdawes/games/roms_nds/    
 NES (Mesen)  
 SNES (Snes9x)  
 Sega Master System (SMS Plus GX)  
