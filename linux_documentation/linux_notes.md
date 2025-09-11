@@ -1001,7 +1001,9 @@ Atari 2600 (Stella 2023)
 Atari Jaguar (Virtual Jaguar)  
 Atari Lynx (Handy)  
 ColecoVision (Gearcoleco)  
+Commodore C64 (VICE x64sc, accurate)  
 Turbo-Grafix 16 (Beetle PCE FAST)  
+Nintendo DS (melonDS DS)  
 Game Boy Advance (mGBA)  
 Nintendo 64 (ParaLLEI N64)  
 NES (Mesen)  
@@ -1023,16 +1025,17 @@ Atari 2600 (Stella 2023) - /home/bgdawes/games/Atari - 2600/
 Atari Jaguar (Virtual Jaguar) - /home/bgdawes/games/Atari - Jaguar/  
 Atari Lynx (Handy) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Atari - Lynx (LYX)/  
 ColecoVision (Gearcoleco) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Coleco - ColecoVision/  
+Commodore C64 (VICE x64sc, accurate) - /home/bgdawes/games/Commodore - Commodore 64 (PP)/  
 Turbo-Grafix 16 (Beetle PCE FAST) - /home/bgdawes/games/retro-within/Complete NTSC-US TurboGrafx-16 Roms - Videos - Manuals Collection/NTSC-US TurboGrafx-16 Roms/  
+Nintendo DS (melonDS DS) - /home/bgdawes/games/roms_nds/  
 Game Boy Advance (mGBA) - /home/bgdawes/games/roms-bestset-nintendo-game-boy-advance/  
 Nintendo 64 (ParaLLEI N64) - /home/bgdawes/games/retro-within/Complete NTSC-US Nintendo 64 Roms - Videos - Manuals Collection/NTSC-US Nintendo 64 Roms/  
-******************* - /home/bgdawes/games/roms_nds/    
-NES (Mesen)  
-SNES (Snes9x)  
-Sega Master System (SMS Plus GX)  
-Sega Genesis (Genesis Plus GX)  
-Sega 32X (PicoDrive)  
-Neo Geo (Geolith)  
+NES (Mesen) - /home/bgdawes/games/retro-within/Nintendo Entertainment System/  
+SNES (Snes9x) - /home/bgdawes/games/retro-within/Complete NTSC-US Super Nintendo Roms - Videos - Manuals Collection/NTSC-US Super Nintendo System Roms/  
+Sega Master System (SMS Plus GX) - /home/bgdawes/games/Cylum's Sega Master System ROM Collection (02-16-2021)/  
+Sega Genesis (Genesis Plus GX) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - Mega Drive - Genesis/  
+Sega 32X (PicoDrive) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - 32X/  
+Neo Geo (Geolith) - /home/bgdawes/games/neo_geo_roms/NeoSD/  
 
 #### Shaders
 
@@ -1052,7 +1055,9 @@ Atari 2600 (Stella 2023) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl
 Atari Jaguar (Virtual Jaguar) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Atari Lynx (Handy) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/handheld/ags001.glslp`  
 ColecoVision (Gearcoleco) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Commodore C64 (VICE x64sc, accurate) - `/home/bgdawes/.config/retroarch/config/VICE x64sc/VICE x64sc.glslp`
 Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
+Nintendo DS (melonDS DS) - `/home/bgdawes/.config/retroarch/config/melonDS DS/melonDS DS.glslp`  
 Game Boy Advance (mGBA) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
 Nintendo 64 (ParaLLEI N64) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/shaders/crt-aperture.glsl`  
 NES (Mesen) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp`  
@@ -1069,7 +1074,7 @@ Sega 32X (PicoDrive) - `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt
 
 #### Overlays
 
-Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES / SNES.
+Add overlays: overlays are fun. yay. the only overlays availavble via retroarch online updater are for the NES, SNES, Genesis, and 32X.
 
 https://forums.libretro.com/t/console-game-themed-bezels/10472
 
@@ -1080,7 +1085,9 @@ Atari 2600 (custom)
 Atari Jaguar (custom)
 Atari Lynx (custom)  
 ColecoVision (custom)  
+Commodore C64 (custom)  
 Turbo-Grafix 16 (custom)  
+Nintendo DS (custom)  
 Game Boy Advance (custom)  
 Nintendo 64 (custom)  
 NES (built-in)  
