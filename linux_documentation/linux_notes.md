@@ -371,6 +371,34 @@ The `xorg` package group should be the only package you need to install to get a
 
 `# timedatectl set-timezone America/Chicago`  
 
+#### Install additional hard drives: partition drive, create file system, and mount on boot
+
+Create a directory to mount the new drive:
+
+`$ mkdir storage*`
+
+Place additional hard drive in tower. Buy a quality SATA connecter and connect hard drive to motherboard. Connect hard drive to power supply. Run the following command to verify that the hard drive is recognized:
+
+`$ lsblk`
+
+Create partition for the new drive:
+
+`# fdisk /dev/sd*`
+
+Add a new partition by selection command 'n'. Select default partition type 'p'. Select default partition number '1'. Select default first sector '2048'. Select default last sector '1953525167'. Select 'w' to write partition to disk and exit. Run the following command to verify that the new hard drive device was recognized.
+
+`$ lsblk`
+
+Create a file system on the new hard drive.
+
+`# mkfs.ext4 /dev/sdc1`
+
+The output will give you the files system's UUID. You can also find this by the following command:
+
+`# blkid`
+
+Update the fstab file with the new UUID to mount the new drive on boot.
+
 #### As needed, chown additional storage drives[^5]
 
 `# chown -R bgdawes:users /storage`
