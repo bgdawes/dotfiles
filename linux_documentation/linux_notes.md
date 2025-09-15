@@ -391,7 +391,7 @@ Add a new partition by selection command 'n'. Select default partition type 'p'.
 
 Create a file system on the new hard drive.
 
-`# mkfs.ext4 /dev/sdc1`
+`# mkfs.ext4 /dev/sd*1`
 
 The output will give you the files system's UUID. You can also find this by the following command:
 
@@ -399,9 +399,9 @@ The output will give you the files system's UUID. You can also find this by the 
 
 Update the fstab file with the new UUID to mount the new drive on boot.
 
-#### As needed, chown additional storage drives[^5]
+#### As needed, chown additional storage drive mount folders[^5]
 
-`# chown -R bgdawes:users /storage`
+`# chown -R bgdawes:users [storage drive mount folder directory]`
 
 #### Install 'reflector' and add pacman hooks
 
