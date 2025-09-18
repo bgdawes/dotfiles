@@ -1045,25 +1045,45 @@ Neo Geo (Geolith)
 
 The list below contains the rom file locations for each core: 
 
-Core list:
+Core list (original):
 
-Arcade (FinalBurn Neo) - /home/bgdawes/games/cylums-final-burn-neo-rom-collection/Cylum's FinalBurn Neo ROM Collection (02-18-21)/  
-Arcade (MAME 2000) - /home/bgdawes/games/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples/roms/  
-Atari 2600 (Stella 2023) - /home/bgdawes/games/Atari - 2600/  
-Atari Jaguar (Virtual Jaguar) - /home/bgdawes/games/Atari - Jaguar/  
-Atari Lynx (Handy) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Atari - Lynx (LYX)/  
-ColecoVision (Gearcoleco) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Coleco - ColecoVision/  
-Commodore C64 (VICE x64sc, accurate) - /home/bgdawes/games/Commodore - Commodore 64 (PP)/  
-Turbo-Grafix 16 (Beetle PCE FAST) - /home/bgdawes/games/retro-within/Complete NTSC-US TurboGrafx-16 Roms - Videos - Manuals Collection/NTSC-US TurboGrafx-16 Roms/  
-Nintendo DS (melonDS DS) - /home/bgdawes/games/roms_nds/  
-Game Boy Advance (mGBA) - /home/bgdawes/games/roms-bestset-nintendo-game-boy-advance/  
-Nintendo 64 (ParaLLEI N64) - /home/bgdawes/games/retro-within/Complete NTSC-US Nintendo 64 Roms - Videos - Manuals Collection/NTSC-US Nintendo 64 Roms/  
-NES (Mesen) - /home/bgdawes/games/retro-within/Nintendo Entertainment System/  
-SNES (Snes9x) - /home/bgdawes/games/retro-within/Complete NTSC-US Super Nintendo Roms - Videos - Manuals Collection/NTSC-US Super Nintendo System Roms/  
-Sega Master System (SMS Plus GX) - /home/bgdawes/games/Cylum's Sega Master System ROM Collection (02-16-2021)/  
-Sega Genesis (Genesis Plus GX) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - Mega Drive - Genesis/  
-Sega 32X (PicoDrive) - /home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - 32X/  
-Neo Geo (Geolith) - /home/bgdawes/games/neo_geo_roms/NeoSD/  
+Arcade (FinalBurn Neo) - `/home/bgdawes/games/cylums-final-burn-neo-rom-collection/Cylum's FinalBurn Neo ROM Collection (02-18-21)/`  
+Arcade (MAME 2000) - `/home/bgdawes/games/MAME0.37b5_MAME2000_Reference_Set_Update_2_ROMs_Samples/roms/`  
+Atari 2600 (Stella 2023) - `/home/bgdawes/games/Atari - 2600/`  
+Atari Jaguar (Virtual Jaguar) - `/home/bgdawes/games/Atari - Jaguar/`  
+Atari Lynx (Handy) - `/home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Atari - Lynx (LYX)/`  
+ColecoVision (Gearcoleco) - `/home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Coleco - ColecoVision/`  
+Commodore C64 (VICE x64sc, accurate) - `/home/bgdawes/games/Commodore - Commodore 64 (PP)/`  
+Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/games/retro-within/Complete NTSC-US TurboGrafx-16 Roms - Videos - Manuals Collection/NTSC-US TurboGrafx-16 Roms/`  
+Nintendo DS (melonDS DS) - `/home/bgdawes/games/roms_nds/`  
+Game Boy Advance (mGBA) - `/home/bgdawes/games/roms-bestset-nintendo-game-boy-advance/`  
+Nintendo 64 (ParaLLEI N64) - `/home/bgdawes/games/retro-within/Complete NTSC-US Nintendo 64 Roms - Videos - Manuals Collection/NTSC-US Nintendo 64 Roms/`  
+NES (Mesen) - `/home/bgdawes/games/retro-within/Nintendo Entertainment System/`  
+SNES (Snes9x) - `/home/bgdawes/games/retro-within/Complete NTSC-US Super Nintendo Roms - Videos - Manuals Collection/NTSC-US Super Nintendo System Roms/`  
+Sega Master System (SMS Plus GX) - `/home/bgdawes/games/Cylum's Sega Master System ROM Collection (02-16-2021)/`  
+Sega Genesis (Genesis Plus GX) - `/home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - Mega Drive - Genesis/`  
+Sega 32X (PicoDrive) - `/home/bgdawes/games/no_intro_rom_sets/proper1g1r-collection/ROMs/Sega - 32X/`  
+Neo Geo (Geolith) - `/home/bgdawes/games/neo_geo_roms/NeoSD/`  
+
+Core list (updated for new drive migration):
+
+Arcade (FinalBurn Neo) - `/home/bgdawes/storage2/video_games/video_game_files/arcade/fbneo/`  
+Arcade (MAME 2000) - `/home/bgdawes/storage2/video_games/video_game_files/arcade/mame/`  
+Atari 2600 (Stella 2023) - `/home/bgdawes/storage2/video_games/video_game_files/atari/2600/`  
+Atari Jaguar (Virtual Jaguar) - `/home/bgdawes/storage2/video_games/video_game_files/atari/jaguar/`  
+Atari Lynx (Handy) - `/home/bgdawes/storage2/video_games/video_game_files/atari/lynx/`  
+ColecoVision (Gearcoleco) - `/home/bgdawes/storage2/video_games/video_game_files/colecovision/`  
+Commodore C64 (VICE x64sc, accurate) - `/home/bgdawes/storage2/video_games/video_game_files/commodore64/`  
+Turbo-Grafix 16 (Beetle PCE FAST) - `/home/bgdawes/storage2/video_games/video_game_files/turbografx16/`  
+Nintendo DS (melonDS DS) - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/nds/`  
+Game Boy Advance (mGBA) - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_advance/`  
+Nintendo 64 (ParaLLEI N64) - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/n64/`  
+NES (Mesen) - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/nes/`  
+SNES (Snes9x) - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/snes/`  
+Sega Master System (SMS Plus GX) - `/home/bgdawes/storage2/video_games/video_game_files/sega/master_system/`  
+Sega Genesis (Genesis Plus GX) - `/home/bgdawes/storage2/video_games/video_game_files/sega/genesis/`  
+Sega 32X (PicoDrive) - `/home/bgdawes/storage2/video_games/video_game_files/sega/32x/`  
+Neo Geo (Geolith) - `/home/bgdawes/storage2/video_games/video_game_files/neo_geo/`  
 
 #### Shaders
 
