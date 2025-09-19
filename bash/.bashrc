@@ -10,6 +10,7 @@ PS1='[\u@\h \W]\$ '
 
 PATH=$PATH:~/bin:~/.scripts
 alias storageripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/storage/dvdworkspace/dvd-copiez -M'
+alias storage2ripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/storage2/dvdworkspace/dvd-copiez -M'
 alias mainripmoofie='dvdbackup -i /dev/sr0 -o /home/bgdawes/Videos/dvd-copiez -M'
 alias shutdown='shutdown -h now'
 alias playdvd='mplayer dvdnav:// -mouse-movements -dvd-device'
