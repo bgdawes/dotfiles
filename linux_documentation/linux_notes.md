@@ -727,12 +727,6 @@ Use `aur-build` to build the package
 
 `$ aur build aurutils`
 
-None of this may be needed:
-
-https://archlinux.org/news/switch-to-the-base-devel-meta-package-requires-manual-intervention/
-
-https://forum.endeavouros.com/t/aur-update-failure-cannot-find-the-debugedit-binary/53062/13
-
 ##### Installing AUR packages with aurutils >= 20.5.2-1
 
 When I tried to install a package from the AUR after updating to version 20.5.2-1, I received the following error:
