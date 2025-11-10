@@ -1223,6 +1223,19 @@ https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 
 ---
 
+## Steam {#steam}
+
+I really really really wanted to play Bionic Commando Rearmed on Steam, howerver, this took FOREVER for me to figure out how to get this game to play on Arch (time I really should have been spent on other things). That said, it was so damn satisfying when it finally fired up. Here's what I did:
+
+Install steam
+
+Install drivers
+`sudo pacman -Syu vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel`
+
+Holy f - that's all that is needed. No need for the physx driver, nothing. It just plays. You don't even need to assign a proton compability in steam for the game. You are an idiot.
+
+---
+
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
 [^2]:NOOB MISTAKE - arrow down to select free space before creating  another partition, otherwise you won't be able to use the rest of the  disk space  
