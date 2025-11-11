@@ -1232,7 +1232,11 @@ Install steam
 Install drivers
 `sudo pacman -Syu vulkan-icd-loader lib32-vulkan-icd-loader vulkan-intel lib32-vulkan-intel`
 
-Holy f - that's all that is needed. No need for the physx driver, nothing. It just plays. You don't even need to assign a proton compability in steam for the game. You are an idiot.
+Install the game or uninstall then reinstall the game. Then use protontricks to install the physx driver:
+
+https://archive.org/details/phys-x-9.10.0513-system-software
+
+Once I did all of this though, the game was laggy as hell and made the gameplay not fun. To fix this, simply adjust the resolution inside the game. Change the resolution settings from 1920x1080 to 1280x720. Then it works and it's so great that it was worth all the effort.
 
 ---
 
