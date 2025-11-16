@@ -31,6 +31,7 @@ bspc rule -a calibre desktop=^3 follow=on
 # bspc rule -a code-oss desktop=^3 follow=on
 bspc rule -a code-oss follow=on
 bspc rule -a retroarch desktop=^4 follow=on
+bspc rule -a steam desktop=^4 follow=on
 bspc rule -a libreoffice-startcenter desktop=^4 follow=on
 bspc rule -a Soffice desktop=^4 follow=on
 bspc rule -a Hexchat desktop=^5 follow=on
