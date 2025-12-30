@@ -1238,6 +1238,9 @@ https://archive.org/details/phys-x-9.10.0513-system-software
 
 Once I did all of this though, the game was laggy as hell and made the gameplay not fun. To fix this, simply adjust the resolution inside the game. Change the resolution settings from 1920x1080 to 1280x720. Then it works and it's so great that it was worth all the effort.
 
+/home/bgdawes/.steam/root/steamapps/common/
+/home/bgdawes/storage2/video_games/video_game_files/steam/
+
 ---
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
