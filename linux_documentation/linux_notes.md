@@ -998,6 +998,8 @@ Download cores, assets, controller profiles, cheats, databases, overlays, and sh
 
 To zip multiple files into their own individual zip files use this command: `find /home/bgdawes/games/neo_geo_roms/NeoSD -type f -execdir zip '{}.zip' '{}' \;`
 
+For whatever reason, my shaders and overlays stopped working. I fixed this by opening a game in each core, bringing up the 'quick menu' navigating to shaders and overlays, switching them both to 'on', and then save core overrides (again).
+
 ##### MAME Notes
 
 MAME is a little tricky to set up. Finding the ROMS and figuring out which cores to use was complicated. The best ROMS I found were both on the internet archive. Each romset needs their own specific core listed below:
