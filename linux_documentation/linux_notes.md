@@ -1083,7 +1083,9 @@ Neo Geo (Geolith) - `/home/bgdawes/storage2/video_games/video_game_files/neo_geo
 
 #### Shaders
 
-Add shaders: I've only been playing cores 16-bit and below so the shader `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64
+Add shaders: I've only been playing cores 16-bit and below so the shader `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` works great for all of them except for N64.
+
+When adding a shader, first load the shader, apply the shader, then go to 'manage' and then save the shader for the whole core.
 
 Update: `/home/bgdawes/.config/retroarch/shaders/shaders_glsl/crt/crt-royale-fake-bloom-intel.glslp` shaders weren't showing up after I gutted retroarch so I changed Drivers under Settings to `gl` and that restored the shaders.
 
