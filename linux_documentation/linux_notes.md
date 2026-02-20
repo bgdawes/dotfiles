@@ -488,7 +488,8 @@ List running systemd services:
 
 `systemctl list-units --type=service --state=running`
 
-Format USB drive with FAT 32  
+Format USB drive with FAT 32
+
 - identify USB drive device name with: `lsblk`  
 - format USB drive with FAT 32 format: `# mkfs.fat -F 32 /dev/sdx0`  
 - label USB drive: `# fatlabel /dev/sdx0 "xxx"`
