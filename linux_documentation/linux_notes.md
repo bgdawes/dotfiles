@@ -493,6 +493,11 @@ Format USB drive with FAT 32
 - format USB drive with FAT 32 format: `# mkfs.fat -F 32 /dev/sdx0`  
 - label USB drive: `# fatlabel /dev/sdx0 "xxx"`
 
+Fix Thunar crash after trying to hide files
+- change tree view to icon view: `ctrl-b`    
+- hide files: `ctrl-h`    
+- switch back to tree view: `ctrl-t`
+
 ---
 
 ## Git[^6] {#git}
