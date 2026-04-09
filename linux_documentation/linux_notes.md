@@ -502,7 +502,7 @@ Update a package from source before it's updated in the arch repos (specifically
 - download the source files (in this instance it was from here: https://rastersoft.com/programas/devede.html)    
 - download the outdated PKGBUILD file for use as a template    
 - save both files in the same directory  
-- remove security checks (in this case I removed `b2sums=('a161641b7814f90f32b8ea103f7faa6b109487132bb2d9a07d6deae80f887548db8101a94a2a1ca90d9e971a133d4b0a616465c9d6dab46ccc804d8fd755e6f4')`) from the PKGBUILD file    
+- remove security checks (in this case I replaced `b2sums=('a161641b7814f90f32b8ea103f7faa6b109487132bb2d9a07d6deae80f887548db8101a94a2a1ca90d9e971a133d4b0a616465c9d6dab46ccc804d8fd755e6f4')` with `b2sums=('SKIP')`) from the PKGBUILD file    
 - update the PKGBUILD file with the current version    
 - navigate to the directory that contain the files and run `makepkg -si`
 
