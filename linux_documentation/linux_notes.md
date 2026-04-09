@@ -498,6 +498,13 @@ Fix Thunar crash after trying to hide files
 - hide files: `ctrl-h`    
 - switch back to tree view: `ctrl-t`
 
+Update a package from source before it's updated in the arch repos (specifically for this example `devede`)
+- download the source files (in this instance it was from here: https://rastersoft.com/programas/devede.html)    
+- download the outdated PKGBUILD file for use as a template    
+- save both files in the same directory    
+- update the PKGBUILD file with the current version    
+- navigate to the directory that contain the files and run `makepkg -si`
+
 ---
 
 ## Git[^6] {#git}
