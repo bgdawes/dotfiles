@@ -504,7 +504,8 @@ Update a package from source before it's updated in the arch repos (specifically
 - save both files in the same directory  
 - remove security checks (in this case I replaced `b2sums=('a161641b7814f90f32b8ea103f7faa6b109487132bb2d9a07d6deae80f887548db8101a94a2a1ca90d9e971a133d4b0a616465c9d6dab46ccc804d8fd755e6f4')` with `b2sums=('SKIP')`) from the PKGBUILD file    
 - update the PKGBUILD file with the current version    
-- navigate to the directory that contain the files and run `makepkg -si`
+- navigate to the directory that contain the files and run `makepkg -si`    
+- after I did this the package was installed but did not open so I ran it in the terminal with `devede_ng &` (I noticed that it is run in the terminal under `devede_ng` by right-clicking the launcher), the terminal let me know that it needed some random python package `python-importlib-metadata` and after I installed this it worked!
 
 ---
 
