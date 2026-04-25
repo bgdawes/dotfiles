@@ -484,6 +484,14 @@ Compressing / zip multiple files individually in a directory. I had a bunch of f
 
 `find /home/bgdawes/games/neosd/neo_geo_zip_test -type f -execdir zip '{}.zip' '{}' \;`
 
+Decompress multiple zip files - navigate to the directory in the terminal and run:
+
+`for f in *.zip; do unzip "$f"; done`
+
+Decompress multiple 7zip files - navigate to the directory in the terminal and run:
+
+`7z x '*.7z'`
+
 List running systemd services:
 
 `systemctl list-units --type=service --state=running`
