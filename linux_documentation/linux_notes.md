@@ -13,6 +13,8 @@ Contents
 9. [Synergy](#synergy)
 10. [Stow](#stow)
 11. [RetroArch](#retroarch)
+12. [Trimui Smart Pro](#trimuismartpro)
+13. [Steam](#steam)
 
 Appendix
 
@@ -1251,6 +1253,16 @@ https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_t
 ### Cheats
 
 https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
+
+---
+
+## Trimui Smart Pro {#trimuismartpro}
+
+Format microSD card:
+* Identify microSD card - `lsblk`
+* Erase card and reformat - `# parted /dev/sdx0 mklabel msdos`
+* Format to Fat32 - format USB drive with FAT 32 format: `# mkfs.fat -F 32 /dev/sdx0`
+* Safely remove card and restart compruter
 
 ---
 
