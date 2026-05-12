@@ -494,6 +494,10 @@ Decompress multiple 7zip files - navigate to the directory in the terminal and r
 
 `7z x '*.7z'`
 
+Decompress zip file to micro SD card:
+
+`unzip /path/to/source.zip -d /run/media/youruser/SDCARD/`
+
 List running systemd services:
 
 `systemctl list-units --type=service --state=running`
