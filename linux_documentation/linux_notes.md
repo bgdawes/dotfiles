@@ -1268,6 +1268,13 @@ Format microSD card:
 * Format to Fat32 - format USB drive with FAT 32 format: `# mkfs.fat -F 32 /dev/sdx0`
 * Safely remove card and restart compruter
 
+After installing NextUI the following systems were missing ROM folders:
+* MAME - I put these roms in the `Arcade (FBN)` folder
+* N64 - Created `Nintendo 64 (N64)` folder in `/Roms/` then download and install Mupen64Plus emulator pak
+* NEOGEO - I put these roms in the `Arcade (FBN)` folder
+* PCECD - I put these roms in the `TurboGrafx-16 (PCE)` folder
+* VECTREX - Not supported
+
 ---
 
 ## Steam {#steam}
