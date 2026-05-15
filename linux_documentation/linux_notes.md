@@ -1279,6 +1279,7 @@ For whatever reason, I could not scrape boxart / game images for the following s
 * `Arcade (FBN)`
 * `Atari 2600 (A2600)`
 * `Sega 32X (32X)`
+
 So I installed `nextui-scrapegoat-pak` and created an account on screenscraper.fr - this seems to work
 
 ---
