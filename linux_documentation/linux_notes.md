@@ -1282,7 +1282,10 @@ For whatever reason, I could not scrape boxart / game images for the following s
 * `Atari 2600 (A2600)`
 * `Sega 32X (32X)`
 
-So I installed `nextui-scrapegoat-pak` and created an account on screenscraper.fr - this seems to work
+So I installed `nextui-scrapegoat-pak` and created an account on screenscraper.fr - this seems to work, to setup `nextui-scrapegoat-pak`:
+* Download current release from github to PC
+* Unzip file on PC
+* Copy folder contents of `/home/bgdawes/storage2/video_games/trimui/trimui_os_files/Tools/tg5040/ScrapeGoat.pak` to root of microSD `/Tools/tg5040/ScrapeGoat.pak/`
 
 ---
 
