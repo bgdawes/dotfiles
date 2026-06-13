@@ -512,6 +512,9 @@ Fix Thunar crash after trying to hide files
 - hide files: `ctrl-h`    
 - switch back to tree view: `ctrl-t`
 
+Fix xfce4-panel
+
+
 Update a package from source before it's updated in the arch repos (specifically for this example `devede`)
 - download the source files (in this instance it was from here: https://rastersoft.com/programas/devede.html)    
 - download the outdated PKGBUILD file for use as a template    
@@ -1261,6 +1264,16 @@ https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 ---
 
 ## Trimui Smart Pro {#trimuismartpro}
+
+The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
+
+`# cat /home/bgdawes/storage2/video_games/trimui/trimui_os_files/knulli-a133-trimui-smart-pro-scarab-20260511.img > /dev/sdx0`
+
+This command didn't work for me for whatever reason so I tried this:
+
+`# dd if=/home/bgdawes/storage2/video_games/trimui/trimui_os_files/knulli-a133-trimui-smart-pro-scarab-20260511.img of=/dev/sdx0 status=progress`
+
+--
 
 Format microSD card:
 * Identify microSD card - `lsblk`
