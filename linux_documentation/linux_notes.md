@@ -1277,7 +1277,7 @@ This still didn't work, so I followed the steps below to completely re-format my
 
 TRIMUI_IP_ADDRESS: 192.168.86.25
 
-Power on the Trimui, let it sit, enter this into thunar: `smb://knulli` or `smb://192.168.86.25`. Navigate into the share folder, then locate the roms folder, and then you can add roms.
+Power on the Trimui, let it sit, enter this into thunar after clicking on `Network`: `smb://knulli` or `smb://192.168.86.25`. Navigate into the share folder, then locate the roms folder, and then you can add roms. Note: I had to install `gvfs-smb` to get this to work.
 
 --
 
