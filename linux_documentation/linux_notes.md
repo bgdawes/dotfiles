@@ -502,6 +502,10 @@ List running systemd services:
 
 `systemctl list-units --type=service --state=running`
 
+Bulk rename files, in the instance below, I wanted to remove `.neo.`:
+
+`for f in *.*.zip; do mv -- "$f" "${f//.neo.zip/.zip}"; done`
+
 Format USB drive with FAT 32
 - identify USB drive device name with: `lsblk`  
 - format USB drive with FAT 32 format: `# mkfs.fat -F 32 /dev/sdx0`  
@@ -1181,7 +1185,7 @@ Neo Geo (custom)
 
 #### Controllers
 
-I way over-complicated controller setup. I took inspiration from this reddit post (https://www.reddit.com/r/RetroArch/comments/vq8wyw/guide_how_to_assign_multiple_different/). I literally just plugged in each controller and saved each controller using it's default profile. Then I configured buttons by core (example: 8bitdo_NES_remap.rmp). 
+I way over-complicated controller setup. I took inspiration from this reddit post (https://www.reddit.com/r/RetroArch/comments/vq8wyw/`for f in *.*.zip; do mv -- "$f" "${f//.neo.zip/.zip}"; done`guide_how_to_assign_multiple_different/). I literally just plugged in each controller and saved each controller using it's default profile. Then I configured buttons by core (example: 8bitdo_NES_remap.rmp). 
 
 8bitdo controller setup notes - I swaped buttons II and IV for the turbo-grafix 16, I also had to map button A to C and X to B for the sega master system and lastly I swapped buttons X and B on the NES core.
 
@@ -1277,7 +1281,11 @@ This still didn't work, so I followed the steps below to completely re-format my
 
 TRIMUI_IP_ADDRESS: 192.168.86.25
 
-Power on the Trimui, let it sit, enter this into thunar after clicking on `Network`: `smb://knulli` or `smb://192.168.86.25`. Navigate into the share folder, then locate the roms folder, and then you can add roms. Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.
+The trimui IP address changed randomly to: 192.168.86.28
+
+So I set a static IP for KNULLI to: 192.168.86.28
+
+Power on the Trimui, let it sit, enter this into thunar after clicking on `Network`: `smb://knulli`. Navigate into the share folder, then locate the roms folder, and then you can add roms. Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.
 
 --
 
