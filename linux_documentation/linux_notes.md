@@ -1287,7 +1287,7 @@ So I set a static IP for KNULLI to: 192.168.86.28
 
 Power on the Trimui, let it sit, enter this into thunar after clicking on `Network`: `smb://knulli`. Navigate into the share folder, then locate the roms folder, and then you can add roms. Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.
 
-Managing cores is important. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
+Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
 
 --
 
