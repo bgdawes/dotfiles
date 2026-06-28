@@ -1287,6 +1287,8 @@ So I set a static IP for KNULLI to: 192.168.86.28
 
 Power on the Trimui, let it sit, enter this into thunar after clicking on `Network`: `smb://knulli`. Navigate into the share folder, then locate the roms folder, and then you can add roms. Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.
 
+Managing cores is important. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
+
 --
 
 Format microSD card:
