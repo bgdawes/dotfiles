@@ -1191,6 +1191,8 @@ I way over-complicated controller setup. I took inspiration from this reddit pos
 
 I watched a youtube video to set up the N64 pad - the trick here was that the yellow buttons are considered the 'right joystick'.
 
+Setting up controller 2: for whatever reason, I really wanted to play Gyromite on the NES and the game requires two controllers, one to move the player and one to lift the pipes up and down. I wanted both player 1 and player 2 controllers to map to the same controller in retroarch. To do this I navigated to `settings > input > RetroPad Binds` in retroarch. From there, I navigated to `Port 2 Controls` and selected the same controller (`Microsoft X-Box 360 pad`) under `Device Index` that I have listed in `Port 1 Controls`. This worked and doesn't seem to have messed up any other controller setup. Found a reference on how to do this on reddit here: https://www.reddit.com/r/RetroArch/comments/tx6jsc/how_to_control_player_1_2_with_the_same_controller/
+
 ##### Genesis USB controller setup
 
 This one took me awhile so I wanted to document.
