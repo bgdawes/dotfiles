@@ -15,6 +15,7 @@ Contents
 11. [RetroArch](#retroarch)
 12. [Trimui Smart Pro](#trimuismartpro)
 13. [Steam](#steam)
+14. [Windows PC / iTunes](#windowspcitunes)
 
 Appendix
 
@@ -1337,6 +1338,17 @@ Once I did all of this though, the game was laggy as hell and made the gameplay 
 
 /home/bgdawes/.steam/root/steamapps/common/
 /home/bgdawes/storage2/video_games/video_game_files/steam/
+
+---
+
+## Windows PC / iTunes {#windowspcitunes}
+
+Temp placeholder for now. I really wanted to update my iPad using an old PC I had (because I couldn't unless the iPad was connected to iTunes since I didn't have enough space available on the iPad) so I wound up installing windows 10 to install iTunes. Helpful links below:
+
+https://learn.microsoft.com/en-us/answers/questions/2287898/how-to-perform-repair-upgrade-in-windows-11-articl
+https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_tried_almost_everything/
+https://www.microsoft.com/en-us/software-download/windows10ISO
+https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_tried_almost_everything/
 
 ---
 
