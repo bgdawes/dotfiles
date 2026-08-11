@@ -1257,12 +1257,12 @@ I lost my overlay for SNES; this is a non-issue. I just resaved it and it worked
 
 For my genesis problems, I think it's the core: BlastEm. The shader wouldn't save to the core so I copied: `/home/bgdawes/.config/retroarch/config/SMS Plus GX/SMS Plus GX.glslp` to `/home/bgdawes/.config/retroarch/config/BlastEm/BlastEm.glslp`. That fixed the shader saving but I'm still gonna delete the core and try the Genesis Plus GX core.
 
-https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/
-https://www.reddit.com/r/RetroArch/comments/7n94x3/how_do_i_delete_game_history_in_retroarch/
-https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/
-https://forums.launchbox-app.com/topic/79126-retroarch-overrides-wont-let-me-save-configuration/
-https://www.reddit.com/r/RetroArch/comments/1aorbbz/i_cant_save_overrides/
-https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_to_have_any_options_at/
+https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/    
+https://www.reddit.com/r/RetroArch/comments/7n94x3/how_do_i_delete_game_history_in_retroarch/    
+https://www.reddit.com/r/RetroArch/comments/yddd4s/core_overrides_not_saving/    
+https://forums.launchbox-app.com/topic/79126-retroarch-overrides-wont-let-me-save-configuration/    
+https://www.reddit.com/r/RetroArch/comments/1aorbbz/i_cant_save_overrides/    
+https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_to_have_any_options_at/    
 
 ### Cheats
 
