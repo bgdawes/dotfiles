@@ -1280,7 +1280,7 @@ This command didn't work for me for whatever reason so I tried this:
 
 `# dd if=/home/bgdawes/storage2/video_games/trimui/trimui_os_files/knulli-a133-trimui-smart-pro-scarab-20260511.img of=/dev/sdx0 status=progress`
 
-This still didn't work, so I followed the steps below to completely re-format my microSD card, installed a FAT 32 file system, and then flashed the drive on my windows laptop using Rufus. That worked.
+This still didn't work, so I completely re-formated my microSD card, installed a FAT 32 file system, and then flashed the drive on my windows laptop using Rufus. That worked.
 
 TRIMUI_IP_ADDRESS: 192.168.86.25
 
