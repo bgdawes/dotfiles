@@ -727,21 +727,29 @@ TIP: to quit vifm, type `:q`
 #### First, uninstall the package
 
 `# pacman -Rsn foo`
+
 Confirm the package is no longer installed
+
 `# pacman -Sl aurpkgs`
 
 #### Once the package is no longer installed, remove the package from the repository
 
 `$ repo-remove /var/cache/pacman/aurpkgs/aurpkgs.db.tar foo`
+
 Refresh package databases
+
 `# pacman -Syu`
+
 AUR package removed!
 
 ### Migrate existing AUR packages
 
 Find the package tar.xz file
+
 `~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
+
 Add the package file to the AUR local repository
+
 `$ repo-add /var/cache/pacman/aurpkgs/aurpkgs.db.tar ~/builds/aurutils/aurutils-1.5.3-5-any.pkg.tar.xz`
 
 ### Query explicitly installed AUR packages
