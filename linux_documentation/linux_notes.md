@@ -305,8 +305,6 @@ UUID=2cff430b-b3e6-4718-85c3-673cecf0c9e4 none swap defaults 0 0
 
 - Type 'exit', remove USB drive, and then type 'reboot'.  
 
-___
-
 ## General recommendations {#generalrecommendations}
 
 ### Install XDG user directories, Xorg Display Server, Display Manager, and Desktop Environment
@@ -440,8 +438,6 @@ There are several network manager applications available to manage network conne
 
 To switch back to netctl, simply execute the enable / disable commands above again and swap out `netctl-auto@wlp3s0.service` with `NetworkManager.service`  
 
-___
-
 ## General Linux Commands {#generallinuxcommands}
 
 System install date
@@ -528,8 +524,6 @@ Update a package from source before it's updated in the arch repos (specifically
 - update the PKGBUILD file with the current version    
 - navigate to the directory that contain the files and run `makepkg -si`    
 - after I did this the package was installed but did not open so I ran it in the terminal with `devede_ng &` (I noticed that it is run in the terminal under `devede_ng` by right-clicking the launcher), the terminal let me know that it needed some random python package `python-importlib-metadata` and after I installed this it worked!
-
-___
 
 ## Git[^6] {#git}
 
@@ -652,8 +646,6 @@ I was messing around on github and accidently added a 'yaml' file to my repo. I 
 Gist is a really great way to paste stuff (like system journals) to github directly from the command line. This was a huge help when I messed up synergy and my system hung on boot / wouldn't even start. You have to first install the `gist` package and then set it up on github, the process was really easy - you do it through the command line and it gives you some token to enter on github. Then you can save boot journals to gist for debugging in case you mess up your system like I did with synergy.
 
 `$ journalctl - b | gist -p`
-
-___
 
 ## aurutils {#aurutils}
 
@@ -799,14 +791,10 @@ https://bbs.archlinux.org/viewtopic.php?pid=2250579#p2250579
 
 Fixed!
 
-___
-
 ## pandoc {#pandoc}  
 
 Convert markdown file to a latex formatted PDF  
 `$ pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
-
-___
 
 ## vpn {#vpn}  
 
@@ -867,8 +855,6 @@ Don't forget to logout
 >
 >This is as bulletproof as it gets. If the steps are followed correctly, at no point is the torrent traffic ever exposed to your ISP since the Firewall only lets all the traffic go to Windscribe VPN server.
 
-___
-
 ## Rsync & SSH {#rsyncssh} 
 
 I have no idea how I set up the SSH connection unfortunately.
@@ -878,8 +864,6 @@ To pull a file from Giant to Symphonic from Symphonic's terminal
 
 To pull a folder from Giant to Symphonic from Symphonic's terminal
 `$ rsync -P -r bgdawes@giant:/home/bgdawes/Documents/foldername /home/bgdawes/Documents/temp`
-
-___
 
 ## Synergy {#synergy} 
 
@@ -1004,13 +988,9 @@ synergyc symphonic
 
 I originally installed synergy 1 but it got laggy / buggy, then I installed Synergy 3 (Synergy 3 RC3) and everything works well (knock on wood). I spent hours trying to add `symphonic` as a computer to get this to work but the connection would always fail. Finally I clicked (or slid the switch) on 'manual config'. That brought up a menu where I could add the host name and wifi ip of `symphonic`. After that, everything works perfectly.
 
-___
-
 ## YAC Reader {#yacreader}
 
 To load PDF and CBR files to iPad to be viewed on YAC Reader, connect iPad to compruter, then copy PDF and / or CBR files to the iPad YAC folder. On the iPad, click the import button at the top and then click the File Sharing button. Click the import button. You should see the file transfer progress at the top right.
-
-___
 
 ## Stow {#stow}
 
@@ -1028,8 +1008,6 @@ Create symlink to where the new stow file should go. Note: you may need to run t
 I'm still not quite sure how stow works but I've got it to work the way I want it to work. In the example above I had to use the -t command to get the symlink established. I think this might be because the file I wanted to stow is in /etc/? Regardless, next time you want to stow something, hopefully this will help.
 
 Reference that helped me to understand stow a little better: https://gist.github.com/andreibosco/cb8506780d0942a712fc
-
-___
 
 ## RetroArch {#retroarch}
 
@@ -1276,11 +1254,13 @@ https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_t
 
 https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 
-___
 
 ## Trimui Smart Pro {#trimuismartpro}
 
-I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs
+I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs.
+
+Setup microsd card.
+___
 
 The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
 
@@ -1329,8 +1309,6 @@ So I installed `nextui-scrapegoat-pak` and created an account on screenscraper.f
 * Unzip file on PC
 * Copy folder contents of `/home/bgdawes/storage2/video_games/trimui/trimui_os_files/Tools/tg5040/ScrapeGoat.pak` to root of microSD `/Tools/tg5040/ScrapeGoat.pak/`
 
-___
-
 ## Steam {#steam}
 
 I really really really wanted to play Bionic Commando Rearmed on Steam, howerver, this took FOREVER for me to figure out how to get this game to play on Arch (time I really should have been spent on other things). That said, it was so damn satisfying when it finally fired up. Here's what I did:
@@ -1348,8 +1326,6 @@ Once I did all of this though, the game was laggy as hell and made the gameplay 
 
 /home/bgdawes/.steam/root/steamapps/common/    
 /home/bgdawes/storage2/video_games/video_game_files/steam/    
-
-___
 
 ## Windows PC / iTunes {#windowspcitunes}
 
