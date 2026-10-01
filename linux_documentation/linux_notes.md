@@ -305,7 +305,7 @@ UUID=2cff430b-b3e6-4718-85c3-673cecf0c9e4 none swap defaults 0 0
 
 - Type 'exit', remove USB drive, and then type 'reboot'.  
 
----
+***
 
 ## General recommendations {#generalrecommendations}
 
@@ -440,7 +440,7 @@ There are several network manager applications available to manage network conne
 
 To switch back to netctl, simply execute the enable / disable commands above again and swap out `netctl-auto@wlp3s0.service` with `NetworkManager.service`  
 
----
+***
 
 ## General Linux Commands {#generallinuxcommands}
 
@@ -529,7 +529,7 @@ Update a package from source before it's updated in the arch repos (specifically
 - navigate to the directory that contain the files and run `makepkg -si`    
 - after I did this the package was installed but did not open so I ran it in the terminal with `devede_ng &` (I noticed that it is run in the terminal under `devede_ng` by right-clicking the launcher), the terminal let me know that it needed some random python package `python-importlib-metadata` and after I installed this it worked!
 
----
+***
 
 ## Git[^6] {#git}
 
@@ -653,7 +653,7 @@ Gist is a really great way to paste stuff (like system journals) to github direc
 
 `$ journalctl - b | gist -p`
 
----
+***
 
 ## aurutils {#aurutils}
 
@@ -799,14 +799,14 @@ https://bbs.archlinux.org/viewtopic.php?pid=2250579#p2250579
 
 Fixed!
 
----
+***
 
 ## pandoc {#pandoc}  
 
 Convert markdown file to a latex formatted PDF  
 `$ pandoc *filepath*/linux_notes.md --pdf-engine=xelatex -o *filepath*/linux_notes.pdf`  
 
----
+***
 
 ## vpn {#vpn}  
 
@@ -867,7 +867,7 @@ Don't forget to logout
 >
 >This is as bulletproof as it gets. If the steps are followed correctly, at no point is the torrent traffic ever exposed to your ISP since the Firewall only lets all the traffic go to Windscribe VPN server.
 
----
+***
 
 ## Rsync & SSH {#rsyncssh} 
 
@@ -879,7 +879,7 @@ To pull a file from Giant to Symphonic from Symphonic's terminal
 To pull a folder from Giant to Symphonic from Symphonic's terminal
 `$ rsync -P -r bgdawes@giant:/home/bgdawes/Documents/foldername /home/bgdawes/Documents/temp`
 
----
+***
 
 ## Synergy {#synergy} 
 
@@ -1004,13 +1004,13 @@ synergyc symphonic
 
 I originally installed synergy 1 but it got laggy / buggy, then I installed Synergy 3 (Synergy 3 RC3) and everything works well (knock on wood). I spent hours trying to add `symphonic` as a computer to get this to work but the connection would always fail. Finally I clicked (or slid the switch) on 'manual config'. That brought up a menu where I could add the host name and wifi ip of `symphonic`. After that, everything works perfectly.
 
----
+***
 
 ## YAC Reader {#yacreader}
 
 To load PDF and CBR files to iPad to be viewed on YAC Reader, connect iPad to compruter, then copy PDF and / or CBR files to the iPad YAC folder. On the iPad, click the import button at the top and then click the File Sharing button. Click the import button. You should see the file transfer progress at the top right.
 
----
+***
 
 ## Stow {#stow}
 
@@ -1029,7 +1029,7 @@ I'm still not quite sure how stow works but I've got it to work the way I want i
 
 Reference that helped me to understand stow a little better: https://gist.github.com/andreibosco/cb8506780d0942a712fc
 
----
+***
 
 ## RetroArch {#retroarch}
 
@@ -1276,9 +1276,11 @@ https://www.reddit.com/r/RetroArch/comments/1jv9irs/so_is_blastem_not_supposed_t
 
 https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 
----
+***
 
 ## Trimui Smart Pro {#trimuismartpro}
+
+I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs
 
 The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
 
@@ -1300,7 +1302,7 @@ Power on the Trimui, let it sit, enter this into thunar after clicking on `Netwo
 
 Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
 
---
+***
 
 Format microSD card:
 * Identify microSD card - `lsblk`
@@ -1327,7 +1329,7 @@ So I installed `nextui-scrapegoat-pak` and created an account on screenscraper.f
 * Unzip file on PC
 * Copy folder contents of `/home/bgdawes/storage2/video_games/trimui/trimui_os_files/Tools/tg5040/ScrapeGoat.pak` to root of microSD `/Tools/tg5040/ScrapeGoat.pak/`
 
----
+***
 
 ## Steam {#steam}
 
@@ -1347,7 +1349,7 @@ Once I did all of this though, the game was laggy as hell and made the gameplay 
 /home/bgdawes/.steam/root/steamapps/common/    
 /home/bgdawes/storage2/video_games/video_game_files/steam/    
 
----
+***
 
 ## Windows PC / iTunes {#windowspcitunes}
 
@@ -1358,7 +1360,7 @@ https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_
 https://www.microsoft.com/en-us/software-download/windows10ISO    
 https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_tried_almost_everything/    
 
----
+***
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
