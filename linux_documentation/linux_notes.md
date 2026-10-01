@@ -1260,6 +1260,7 @@ https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs.
 
 Setup microsd card.
+
 ___
 
 The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
