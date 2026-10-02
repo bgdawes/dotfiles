@@ -1257,9 +1257,43 @@ https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 
 ## Trimui Smart Pro {#trimuismartpro}
 
-I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs.
+I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs. Begin by formatting the microSD card. Steps below:
 
-Setup microsd card.
+### Format microSD card and flash Knulli Scarab
+
+#### Identify microSD card
+
+`$ lsblk`
+
+#### Erase card and reformat
+
+`# parted /dev/sdx0 mklabel msdos`
+
+#### Safely remove card and restart compruter
+
+#### Format USB drive with FAT 32 format
+
+`# mkfs.fat -F 32 /dev/sdx0`
+
+#### Safely remove card and restart compruter
+
+#### Verify card is set up correctly
+
+`# parted -l print`
+
+#### Download Kunlli Scarab to windows laptop and flash with Rufus
+
+### Add games (Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.)
+
+#### Power on the Trimui and let it sit
+
+#### Open thunar and click on Network then enter the following into the navigation bar
+
+`smb://knulli`
+
+#### Navigate into the share folder, then locate the roms folder, and then you can add roms.
+
+Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
 
 ___
 
@@ -1336,8 +1370,6 @@ https://learn.microsoft.com/en-us/answers/questions/2287898/how-to-perform-repai
 https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_tried_almost_everything/    
 https://www.microsoft.com/en-us/software-download/windows10ISO    
 https://www.reddit.com/r/WindowsHelp/comments/1rtszbq/ms_store_just_doesnt_open_tried_almost_everything/    
-
-___
 
 [^1]:If not hard-wired; jot down device that starts with 'w'; wireless devices will usually follow a naming convention of 'wlp#s0'  
 
