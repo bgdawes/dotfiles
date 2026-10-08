@@ -1329,19 +1329,19 @@ Navigate to `GAME SETTINGS` and select `MISSING BIOS CHECK`
 
 Missing bios files and paths:
 
-Game Boy Advance - `gba_bios.bin`
-Game Boy Advance - `gb_bios.bin`
-Game Boy Advance - `gbc_bios.bin`
-Game Boy Advance - `sgb_bios.bin`
-Atari Lynx - `lynxboot.img`
-Neo-Geo - `neogeo.zip`
-PC Engine - `syscard3.pce`
-Saturn - `sega_101.bin`
-Saturn - `mpr-17933.bin`
-Saturn - `mpr-1811-mx.ic1`
-Saturn - `mpr-19367-mx.ic1`
-Saturn - `saturn_bios.bin`
-Vectrex - `vectrex.zip`
+Game Boy Advance - `gba_bios.bin`    
+Game Boy Advance* - `gb_bios.bin`    
+Game Boy Advance - `gbc_bios.bin`    
+Game Boy Advance* - `sgb_bios.bin`    
+Atari Lynx - `lynxboot.img`    
+Neo-Geo - `neogeo.zip`    
+PC Engine - `syscard3.pce`    
+Saturn - `sega_101.bin`    
+Saturn - `mpr-17933.bin`    
+Saturn - `mpr-1811-mx.ic1`    
+Saturn - `mpr-19367-mx.ic1`    
+Saturn - `saturn_bios.bin`     
+Vectrex - `vectrex.zip`     
 
 #### Scraping box art
 
