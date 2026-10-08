@@ -1323,9 +1323,33 @@ mame - `/home/bgdawes/storage2/video_games/video_game_files/arcade/mame`
 
 * I only loaded a handful of saturn games because they're huge and my microSD is only 32 gigglebytes
 
+#### Load missing bios files
+
+Navigate to `GAME SETTINGS` and select `MISSING BIOS CHECK`
+
+Missing bios files and paths:
+
+Game Boy Advance - `gba_bios.bin`
+Game Boy Advance - `gb_bios.bin`
+Game Boy Advance - `gbc_bios.bin`
+Game Boy Advance - `sgb_bios.bin`
+Atari Lynx - `lynxboot.img`
+Neo-Geo - `neogeo.zip`
+PC Engine - `syscard3.pce`
+Saturn - `sega_101.bin`
+Saturn - `mpr-17933.bin`
+Saturn - `mpr-1811-mx.ic1`
+Saturn - `mpr-19367-mx.ic1`
+Saturn - `saturn_bios.bin`
+Vectrex - `vectrex.zip`
+
+#### Scraping box art
+
+Navigate to `POWER MANAGEMENT > EXTENDED MODE` change to `NONE`. Scrape box art and then turn back to `SUSPEND` when done.
+
 #### Managing cores
 
-Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
+Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Nestopia (formally Mesen but something must have changed because now it's supper laggy). To do this go to `GAME SETTINGS > PER SYSTEM ADVANCED CONFIGURATION` (it's the last entry at the bottom). From there you can select the system and change the emulator as needed.
 ___
 
 The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
