@@ -1257,6 +1257,8 @@ https://www.makeuseof.com/how-to-use-retroarch-cheat-retro-games/
 
 ## Trimui Smart Pro {#trimuismartpro}
 
+Note: You do not have the trimui smart pro S and this is an important distinction because the knulli scarab distribution is different. The trimui smart pro S has clickable analog joysticks. 
+
 I had to replace my microSD card so I thought I'd document every step. Notes below are from prior installs. Begin by formatting the microSD card. Steps below:
 
 ### Format microSD card and flash Knulli Scarab
@@ -1281,11 +1283,13 @@ I had to replace my microSD card so I thought I'd document every step. Notes bel
 
 `# parted -l print`
 
-#### Download Kunlli Scarab to windows laptop and flash with Rufus
+#### Download Kunlli Scarab to windows laptop and flash to microSD with Rufus
 
 ### Add games (Note: I had to install `gvfs-smb` to get this to work. Also - make sure to turn off 'suspend' on the trimui power saver.)
 
 #### Power on the Trimui and let it sit
+
+#### Enable SAMBA service on Trimui
 
 #### Open thunar and click on Network then enter the following into the navigation bar
 
@@ -1293,8 +1297,35 @@ I had to replace my microSD card so I thought I'd document every step. Notes bel
 
 #### Navigate into the share folder, then locate the roms folder, and then you can add roms.
 
-Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
+I was getting ridiculously slow transfer speeds so I set knulli to be a preffered device on the router through the google home app, this helped transfer speeds by an order of magnitude
 
+Rom folder paths:
+
+atari2600 - `/home/bgdawes/storage2/video_games/video_game_files/atari/2600`
+lynx - `/home/bgdawes/storage2/video_games/video_game_files/atari/lynx`
+colecovision - `/home/bgdawes/storage2/video_games/video_game_files/colecovision`
+neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`
+gb - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy`
+gba - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_advance`
+gbc - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_color`
+n64 - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/n64`
+nes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/nes`
+snes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/snes`
+pcengine - `/home/bgdawes/storage2/video_games/video_game_files/turbografx16`
+sega32x - `/home/bgdawes/storage2/video_games/video_game_files/sega/32x`
+megadrive - `/home/bgdawes/storage2/video_games/video_game_files/sega/genesis`
+mastersystem - `/home/bgdawes/storage2/video_games/video_game_files/sega/master_system`
+saturn* - `/home/bgdawes/storage2/video_games/trimui/saturn_trimui`
+vectrex - `/home/bgdawes/storage2/video_games/video_game_files/vectrex`
+neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`
+fbneo - `/home/bgdawes/storage2/video_games/video_game_files/arcade/fbneo`
+mame - `/home/bgdawes/storage2/video_games/video_game_files/arcade/mame`
+
+* I only loaded a handful of saturn games because they're huge and my microSD is only 32 gigglebytes
+
+#### Managing cores
+
+Managing cores is important. Example - the default NeoGeo core didn't work with my romset so I changed it to `Geolith` and it worked beautifully, same with NES - I had to change it to Mesan to get the controls to work like I have it set up on my PC. Assign cores in the Knulli menu then assign controls in retroarch to match what you have on your PC.
 ___
 
 The notes below are for NextUI. It's a decent Trimui OS but I wanted to try Knulli Scarab. To do this, I donloyded the most current Knulli Scarab release and flashed the image to the microSD card using the command below:
