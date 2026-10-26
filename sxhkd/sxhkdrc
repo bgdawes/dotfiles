@@ -13,8 +13,8 @@ alt + shift + space
 	cool-retro-term
 
 # rofi program launcher
-alt + Return
-	rofi -show drun
+#alt + Return
+#	rofi -show drun
 
 # rofi window switcher
 #ctrl + Tab
