@@ -1301,25 +1301,25 @@ I was getting ridiculously slow transfer speeds so I set knulli to be a preffere
 
 Rom folder paths:
 
-atari2600 - `/home/bgdawes/storage2/video_games/video_game_files/atari/2600`
-lynx - `/home/bgdawes/storage2/video_games/video_game_files/atari/lynx`
-colecovision - `/home/bgdawes/storage2/video_games/video_game_files/colecovision`
-neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`
-gb - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy`
-gba - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_advance`
-gbc - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_color`
-n64 - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/n64`
-nes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/nes`
-snes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/snes`
-pcengine - `/home/bgdawes/storage2/video_games/video_game_files/turbografx16`
-sega32x - `/home/bgdawes/storage2/video_games/video_game_files/sega/32x`
-megadrive - `/home/bgdawes/storage2/video_games/video_game_files/sega/genesis`
-mastersystem - `/home/bgdawes/storage2/video_games/video_game_files/sega/master_system`
-saturn* - `/home/bgdawes/storage2/video_games/trimui/saturn_trimui`
-vectrex - `/home/bgdawes/storage2/video_games/video_game_files/vectrex`
-neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`
-fbneo - `/home/bgdawes/storage2/video_games/video_game_files/arcade/fbneo`
-mame - `/home/bgdawes/storage2/video_games/video_game_files/arcade/mame`
+atari2600 - `/home/bgdawes/storage2/video_games/video_game_files/atari/2600`    
+lynx - `/home/bgdawes/storage2/video_games/video_game_files/atari/lynx`    
+colecovision - `/home/bgdawes/storage2/video_games/video_game_files/colecovision`    
+neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`    
+gb - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy`    
+gba - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_advance`    
+gbc - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/gameboy_color`    
+n64 - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/n64`    
+nes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/nes`    
+snes - `/home/bgdawes/storage2/video_games/video_game_files/nintendo/snes`    
+pcengine - `/home/bgdawes/storage2/video_games/video_game_files/turbografx16`    
+sega32x - `/home/bgdawes/storage2/video_games/video_game_files/sega/32x`    
+megadrive - `/home/bgdawes/storage2/video_games/video_game_files/sega/genesis`    
+mastersystem - `/home/bgdawes/storage2/video_games/video_game_files/sega/master_system`    
+saturn* - `/home/bgdawes/storage2/video_games/trimui/saturn_trimui`    
+vectrex - `/home/bgdawes/storage2/video_games/video_game_files/vectrex`    
+neogeo - `/home/bgdawes/storage2/video_games/trimui/neo_geo_trimui`    
+fbneo - `/home/bgdawes/storage2/video_games/video_game_files/arcade/fbneo`    
+mame - `/home/bgdawes/storage2/video_games/video_game_files/arcade/mame`    
 
 * I only loaded a handful of saturn games because they're huge and my microSD is only 32 gigglebytes
 
