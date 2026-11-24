@@ -2,24 +2,25 @@
 
 Contents
 
-1. [Arch Linux Install - PC Build](#archlinuxinstallpcbuild)
-2. [General recommendations](#generalrecommendations)
-3. [General Linux Commands](#generallinuxcommands)
+1. [Arch Linux Install - PC Build](#arch-linux-install---pc-build)
+2. [General recommendations](#general-recommendations)
+3. [General Linux Commands](#general-linux-commands)
 4. [Git](#git)
 5. [aurutils](#aurutils)
 6. [pandoc](#pandoc)
 7. [vpn](#vpn)
-8. [Rsync & SSH](#rsyncssh)
+8. [Rsync & SSH](#rsync--ssh)
 9. [Synergy](#synergy)
-10. [Stow](#stow)
-11. [RetroArch](#retroarch)
-12. [Trimui Smart Pro](#trimuismartpro)
-13. [Steam](#steam)
-14. [Windows PC / iTunes](#windowspcitunes)
+10. [YAC Reader](#yac-reader)
+11. [Stow](#stow)
+12. [RetroArch](#retroarch)
+13. [Trimui Smart Pro](#trimui-smart-pro)
+14. [Steam](#steam)
+15. [Windows PC / iTunes](#windows-pc--itunes)
 
 Appendix
 
-## Arch Linux Install - PC Build {#archlinuxinstallpcbuild}
+## Arch Linux Install - PC Build
 
 ### Boot archiso from USB
 
@@ -27,51 +28,42 @@ Two different options were available with this release. Selected the option that
 
 ### Verify boot mode
 
-- Verify UEFI boot mode  
-    `# ls /sys/firmware/efi/efivars`  
+- Verify UEFI boot mode\
+  `# ls /sys/firmware/efi/efivars`
+- The directory should exist and return a bunch of files
 
-- The directory should exist and return a bunch of files  
-
-### Connect to the Innernette  
+### Connect to the Innernette
 
 #### This section is likely outdated (replaced with iwctl)
 
-- Type the following command below to view devices  
-    `# ip link`  
+- Type the following command below to view devices\
+  `# ip link`
+- Ethernet devices should begin with the letter 'E' and wireless devices should begin with the letter 'W'\[^1\]
+- Type the following command to connect to a wireless access point:\
+  `# wifi-menu -o wlp#s0`
+- The system will scan for available networks and provide a menu to select a network. Select the appropriate network, use the default name for the new profile (automatically populated), and enter network password when prompted.
+- Ping google to verify connection:\
+  `# ping -c 3 google.com`
+- Verify a configuration file was created by typing the following command:\
+  `# ls /etc/netctl`
+- You should 'hopefully' see a file called 'wlp#s0-WIFINETWORKNAME'; you can look at the file by typing the following command:\
+  `# nano /etc/netctl/wlp#s0-WIFINETWORKNAME`
 
-- Ethernet devices should begin with the letter 'E' and wireless devices should begin with the letter 'W'[^1]
-  
-- Type the following command to connect to a wireless access point:  
-    `# wifi-menu -o wlp#s0`  
-  
-- The system will scan for available networks and provide a menu to select a network. Select the appropriate network, use the default name for the new profile (automatically populated), and enter network password when prompted.  
-  
-- Ping google to verify connection:  
-    `# ping -c 3 google.com`  
-  
-- Verify a configuration file was created by typing the following command:  
-    `# ls /etc/netctl`  
-  
-- You should 'hopefully' see a file called 'wlp#s0-WIFINETWORKNAME'; you can look at the file by typing the following command:  
-    `# nano /etc/netctl/wlp#s0-WIFINETWORKNAME`  
+### Update the system clock
 
-### Update the system clock  
+`# timedatectl set-ntp true`
 
-`# timedatectl set-ntp true`  
+### View existing drive setup
 
-### View existing drive setup  
+`# lsblk`\
+sda - SSD 240 GB | System drive \[pc build setup\]\
+sdb - SSD 480 GB | Storage drive \[pc build setup\]
 
-`# lsblk`  
-sda - SSD 240 GB | System drive [pc build setup]  
-sdb - SSD 480 GB | Storage drive [pc build setup]  
+### Zap and partition drives
 
-### Zap and partition drives  
-
-- `# gdisk /dev/sda`  
-
-- Press x to enter expert mode. Then press z to zap the drive. Hit y when prompted about wiping out GPT and blanking out MBR.  
-
-- Repeat steps above for additional drives.  
+- `# gdisk /dev/sda`
+- Press x to enter expert mode. Then press z to zap the drive. Hit y when prompted about wiping out GPT and blanking out MBR.
+- Repeat steps above for additional drives.
 
 ### Create primary drive partitions  
 
